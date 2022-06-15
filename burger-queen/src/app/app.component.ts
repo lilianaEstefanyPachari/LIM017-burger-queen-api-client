@@ -1,3 +1,4 @@
+import { JitEvaluator } from '@angular/compiler';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'burger-queen';
+  animals = ['dog', 'cat', 'cow'];
+  name! : string;
+  age = 23;
+  img = 'https://assets.unileversolutions.com/recipes-v2/218401.jpg';
 }

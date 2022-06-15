@@ -1,0 +1,53 @@
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-image: url("../../../assets/img/fondoHamburguesa.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1{
+  width: 35%;
+  font-family: 'Genos', sans-serif;
+  font-size: 70px;
+  text-align: center;
+  color: white;
+}
+
+form {
+  width: 90%;
+  max-width: 520px;
+  background: rgba(48, 45, 45, 0.5);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+form .loginTitle {
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+form .form-label {
+  font-size: 25px;
+  color: white;
+}
+
+form .form-control{
+  height: 60px;
+}
+form .btn {
+  width: 100%;
+  height: 60px;
+  font-size: 25px;
+  background-color: #FFCA40;
+  color: black;
+  opacity: 1;
+  margin-top: 15px;
+}
+

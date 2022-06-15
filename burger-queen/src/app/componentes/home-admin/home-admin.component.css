@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.homeAdmin {
+  height: 100vh;
+  width: 100%;
+  background-image: url("../../../assets/img/fondoHamburguesa.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: rgba(249, 244, 244, 0.78);
+  width: 96%;
+  height: 10vh;
+  margin: 10px auto;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile h4 {
+  margin-left: 20px;
+}
+
+.fa-solid {
+  font-size: 50px;
+}
+
+.logOut {
+  display: flex;
+  align-items: center;
+}
+
+.logOut img {
+  width: 45px;
+}
+
+.adminContainer {
+  background-color: rgba(249, 244, 244, 0.78);
+  width: 96%;
+  margin: auto;
+  height: 87vh;
+}
+
+.adminOptions {
+  display: flex;
+  width: 96%;
+  margin: 0 auto;
+  height: 100px;
+}
+
+.optionEmployees {
+  display: flex;
+  background-color: #FFCA40;
+  width: 140px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin: 20px 20px 10px 20px;
+}
+
+.optionEmployees .fa-regular {
+  font-size: 30px;
+}
+
+.optionEmployees p {
+  font-size: 20px;
+}
+.optionProducts {
+  display: flex;
+  background-color: white;
+  width: 140px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin: 20px 20px 10px 20px;
+}
+
+.optionProducts {
+  font-size: 20px;
+}
+
+.optionProducts .fa-solid {
+  font-size: 30px;
+}
+
+.adminAddUsers {
+  display: flex;
+  width: 96%;
+  margin: 0px auto;
+  height: 60px;
+}
+
+.adminAddUsers .optionAddUsers {
+  display: flex;
+  width: 180px;
+  height: 50px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  margin: 0 20px;
+}
+
+.adminAddUsers .fa-solid{
+  font-size: 30px;
+}
+
+.adminAddUsers p {
+  font-size: 20px;
+  margin-left:5px;
+}
+
+.table {
+  margin: 20px auto;
+  width: 90%;
+}
+
+.tableHeader {
+  background-color: #FFCA40;
+}
+

@@ -1,0 +1,44 @@
+<section class="homeAdmin">
+  <nav>
+    <div class="profile">
+      <i class="fa-solid fa-circle-user"></i>
+      <h4>Maria Santos</h4>
+    </div>
+    <div class="logOut">
+      <img src="assets\img\cerrar-sesion.png">
+    </div>
+  </nav>
+  <section class="adminContainer">
+    <div class="adminOptions">
+      <div class="optionEmployees">
+        <i class="fa-regular fa-user"></i><p>Empleados</p>
+      </div>
+      <div class="optionProducts">
+        <i class="fa-solid fa-cart-shopping"></i><p>Productos</p>
+      </div>
+    </div>
+    <div class="adminAddUsers">
+      <div class="optionAddUsers">
+        <i class="fa-solid fa-circle-plus"></i> <p>Crear Usuario</p>
+      </div>
+    </div>
+    <table class="table">
+      <thead class="tableHeader">
+        <tr>
+          <th scope="col">Usuario</th>
+          <th scope="col">Email</th>
+          <th scope="col">Password</th>
+          <th scope="col">Rol</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employ of employees">
+          <th scope="row">{{employ.userName}}</th>
+          <td>{{employ.email}}</td>
+          <td>{{employ.password}}</td>
+          <td>{{employ.rol}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</section>
