@@ -1,25 +1,28 @@
 module.exports = function() {
   let data = {
-    employees : [{
+    users : [{
       id: 01,
-      userName: 'Juan',
       email: 'juan@gmail.com',
-      password: '12345',
-      rol: 'mozo'
+      password: '123',
+      roles: {
+        admin: true,
+      }
     },
     {
       id: 02,
-      userName: 'Maria',
       email: 'maria@gmail.com',
-      password: '123456',
-      rol: 'chef'
+      password: '1234',
+      roles: {
+        admin: false,
+      }
     },
     {
-      id: 01,
-      userName: 'Lola',
+      id: 03,
       email: 'lola@gmail.com',
-      password: '1234567',
-      rol: 'admin'
+      password: '12345',
+      roles: {
+        admin: false,
+      }
     }]
   }
   return data;

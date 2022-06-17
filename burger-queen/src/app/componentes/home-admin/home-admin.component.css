@@ -130,3 +130,17 @@ nav {
   background-color: #FFCA40;
 }
 
+/*TABLE*/
+
+.tableHeader th {
+  font-size: 25px;
+  text-align: center;
+}
+
+tbody th {
+  font-size: 20px;
+  text-align: center;
+}
+tbody td {
+  font-size: 20px;
+}

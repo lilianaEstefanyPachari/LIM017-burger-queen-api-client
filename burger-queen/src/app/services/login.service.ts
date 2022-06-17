@@ -1,18 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Employees } from '../employees';
+// import { Users } from '../employees';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  private url = 'http://localhost:3000/employees';
+  // private url = 'http://localhost:3000/users';
 
-  constructor(private http: HttpClient) { }
+  // constructor(private http: HttpClient) { }
 
-  getEmpleados(): Observable<Employees[]> {
-    return this.http.get<Employees[]>(this.url);
-  }
+  // getUsers(): Observable<Users[]> {
+  //   return this.http.get<Users[]>(this.url);
+  // }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Employees } from 'src/app/employees';
-import { LoginService } from 'src/app/services/login.service';
+import { Users } from 'src/app/employees';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-home-admin',
@@ -8,13 +8,30 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./home-admin.component.css']
 })
 export class HomeAdminComponent implements OnInit {
-  employees: Employees[] = [];
+  users: Users[] = [];
+  msj = 'administrador'
+  msj2 = 'empleado'
 
-  constructor(private employeesService: LoginService) { }
+  constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
-    this.employeesService.getEmpleados().subscribe((employees) => (this.employees = employees, console.log(employees)));
+    this.getAllUsers();
   }
+
+  getAllUsers(): void {
+    this.usersService.getUsersMethod().subscribe((users) => (this.users = users, console.log(users)));
+  }
+
+  deleteUsers(users: Users){
+    this.usersService
+    .deleteUsersMethod(users)
+    .subscribe(
+    (users) => (this.users = this.users.filter(u => u.id !== users.id)));
+    this.getAllUsers();
+  }
+
+
+
 
   // obtenerEmpleados(){
   //   this._empleadosService.getEmpleados().subscribe(data =>{

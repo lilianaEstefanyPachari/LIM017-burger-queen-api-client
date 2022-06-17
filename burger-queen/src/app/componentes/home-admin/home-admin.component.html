@@ -27,18 +27,26 @@
         <tr>
           <th scope="col">Usuario</th>
           <th scope="col">Email</th>
-          <th scope="col">Password</th>
           <th scope="col">Rol</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let employ of employees">
-          <th scope="row">{{employ.userName}}</th>
+        <tr *ngFor="let employ of users">
+          <th scope="row">{{employ.id}}</th>
           <td>{{employ.email}}</td>
-          <td>{{employ.password}}</td>
-          <td>{{employ.rol}}</td>
+          <td *ngIf="employ.roles.admin===true">{{msj}}</td>
+          <td *ngIf="employ.roles.admin===false">{{msj2}}</td>
+          <td>
+            <i class="fa-solid fa-trash-can" (click)="deleteUsers(employ)"></i><br>
+            <i class="fa-solid fa-pen-to-square"></i>
+          </td>
         </tr>
       </tbody>
     </table>
   </section>
 </section>
+
+<!-- <ng-template #msj2>
+  <td>{{msj2}}</td>
+</ng-template> -->
+
