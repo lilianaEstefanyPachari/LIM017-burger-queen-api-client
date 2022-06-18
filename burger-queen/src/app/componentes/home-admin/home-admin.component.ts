@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Users } from 'src/app/employees';
 import { UsersService } from 'src/app/services/users.service';
+import { ModalNewUsersComponent } from '../modal-new-users/modal-new-users.component';
 
 @Component({
   selector: 'app-home-admin',
@@ -12,7 +14,7 @@ export class HomeAdminComponent implements OnInit {
   msj = 'administrador'
   msj2 = 'empleado'
 
-  constructor(private usersService: UsersService) { }
+  constructor(private usersService: UsersService, private modalNewUser:MatDialog) { }
 
   ngOnInit(): void {
     this.getAllUsers();
@@ -30,7 +32,11 @@ export class HomeAdminComponent implements OnInit {
     this.getAllUsers();
   }
 
-
+  openDialog() {
+    this.modalNewUser.open(ModalNewUsersComponent, {
+      width:"30%"
+    });
+  }
 
 
   // obtenerEmpleados(){
