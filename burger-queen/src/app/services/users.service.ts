@@ -16,6 +16,10 @@ export class UsersService {
     return this.http.get<Users[]>(this.url);
   }
 
+  postUsersMethod(data: Users){
+    return this.http.post<Users>(this.url,data)
+  }
+
   deleteUsersMethod(users: Users): Observable<Users> {
     const deleteUrl = `${this.url}/${users.id}`;
     return this.http.delete<Users>(deleteUrl);
