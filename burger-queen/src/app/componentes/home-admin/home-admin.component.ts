@@ -32,10 +32,25 @@ export class HomeAdminComponent implements OnInit {
     this.getAllUsers();
   }
 
+  editUsers(row: any){
+    this.modalNewUser.open(ModalNewUsersComponent, {
+      width : "30%",
+      data : row
+    }).afterClosed().subscribe((value) =>{
+      if (value==="update"){
+        this.getAllUsers();
+      }
+    })
+  }
+
   openDialog() {
     this.modalNewUser.open(ModalNewUsersComponent, {
       width:"30%"
-    });
+    }).afterClosed().subscribe(val=>{
+      if(val==="save"){
+        this.getAllUsers();
+      }
+    })
   }
 
 

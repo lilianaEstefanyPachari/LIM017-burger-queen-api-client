@@ -28,6 +28,7 @@
           <th scope="col">Usuario</th>
           <th scope="col">Email</th>
           <th scope="col">Rol</th>
+          <th scope="col">Acción</th>
         </tr>
       </thead>
       <tbody>
@@ -36,9 +37,9 @@
           <td>{{employ.email}}</td>
           <td *ngIf="employ.roles.admin===true">{{msj}}</td>
           <td *ngIf="employ.roles.admin===false">{{msj2}}</td>
-          <td>
-            <i class="fa-solid fa-trash-can" (click)="deleteUsers(employ)"></i><br>
-            <i class="fa-solid fa-pen-to-square"></i>
+          <td class="actionButtons">
+            <i class="iconDelete fa-solid fa-trash-can" (click)="deleteUsers(employ)"></i>
+            <i class="iconUpdate fa-solid fa-pen-to-square" (click)="editUsers(employ)"></i>
           </td>
         </tr>
       </tbody>
