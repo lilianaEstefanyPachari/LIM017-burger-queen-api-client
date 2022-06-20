@@ -1,0 +1,30 @@
+{
+  "users": [
+    {
+      "id": 2,
+      "email": "li3333444443@gmail.com",
+      "password": "1234",
+      "roles": {
+        "admin": false
+      }
+    },
+    {
+      "id": 4,
+      "email": "estefany@gmail.com",
+      "password": "22344343",
+      "roles": {
+        "admin": true
+      }
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

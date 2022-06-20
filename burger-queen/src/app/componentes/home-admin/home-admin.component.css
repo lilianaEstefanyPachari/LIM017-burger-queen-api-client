@@ -148,3 +148,19 @@ tbody th {
 tbody td {
   font-size: 20px;
 }
+
+.actionButtons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.actionButtons .fa-solid {
+  font-size: 30px;
+}
+.iconDelete {
+  color: red;
+}
+
+.iconUpdate {
+  color: rgb(3, 3, 36);
+}
