@@ -15,14 +15,17 @@
       "roles": {
         "admin": true
       }
-    }
-  ],
-  "comments": [
+    },
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "email": "luciana222@gmail.com",
+      "password": "1452",
+      "roles": {
+        "admin": true
+      }
     }
+  ],
+  "products": [
   ],
   "profile": {
     "name": "typicode"

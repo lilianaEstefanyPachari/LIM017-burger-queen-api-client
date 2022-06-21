@@ -6,3 +6,13 @@ export interface Users {
     admin: boolean;
   }
 }
+
+// export interface Products {
+//   // id?: number;
+//   name: string;
+//   price: number;
+//   password: string;
+//   roles: {
+//     admin: boolean;
+//   }
+// }

@@ -20,6 +20,7 @@ import { HomeComponent } from './componentes/home/home.component';
 import { HomeAdminComponent } from './componentes/home-admin/home-admin.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalNewUsersComponent } from './componentes/modal-new-users/modal-new-users.component';
+import { HomeAdminProductsComponent } from './componentes/home-admin-products/home-admin-products.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ModalNewUsersComponent } from './componentes/modal-new-users/modal-new-
     HomeComponent,
     HomeAdminComponent,
     ModalNewUsersComponent,
+    HomeAdminProductsComponent,
   ],
   imports: [
     BrowserModule,
