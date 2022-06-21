@@ -1,0 +1,26 @@
+.mat-dialog-title{
+  text-align: center;
+}
+mat-form-field{
+    width: 100%;
+  }
+
+.btnExit {
+  background-color: rgb(24, 22, 22);
+  color: white;
+}
+
+.btnSave {
+  background-color: #FFCA40;
+  color: black;
+}
+
+/* //mat-input focused color */
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #FFCA40!important;
+}
+
+/* // mat-label focused style */
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: black!important;
+}

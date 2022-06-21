@@ -40,25 +40,25 @@ export class UsersService {
   }
 }
 
-export class ProductsService {
+// export class ProductsService {
 
-  private url = 'http://localhost:3000/products/';
+//   private url = 'http://localhost:3000/products/';
 
-  constructor(private http: HttpClient) { }
+//   constructor(private http: HttpClient) { }
 
-  getProductsMethod(){
-    return this.http.get<any>(this.url);
-  }
+//   getProductsMethod(){
+//     return this.http.get<any>(this.url);
+//   }
 
-  postProductsMethod(data: any){
-    return this.http.post<any>(this.url,data)
-  }
+//   postProductsMethod(data: any){
+//     return this.http.post<any>(this.url,data)
+//   }
 
-  deleteProductsMethod(id:number){
-    return this.http.delete<any>(this.url+id);
-  }
+//   deleteProductsMethod(id:number){
+//     return this.http.delete<any>(this.url+id);
+//   }
 
-  updateProductsMethod(data: any, id: number) {
-    return this.http.put<any>(this.url+id, data)
-  }
-}
+//   updateProductsMethod(data: any, id: number) {
+//     return this.http.put<any>(this.url+id, data)
+//   }
+// }

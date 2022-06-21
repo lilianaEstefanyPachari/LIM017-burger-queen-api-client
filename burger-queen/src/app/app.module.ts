@@ -13,6 +13,11 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
 
 //componentes
 import { LoginComponent } from './componentes/login/login.component';
@@ -21,6 +26,13 @@ import { HomeAdminComponent } from './componentes/home-admin/home-admin.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalNewUsersComponent } from './componentes/modal-new-users/modal-new-users.component';
 import { HomeAdminProductsComponent } from './componentes/home-admin-products/home-admin-products.component';
+import { HomeAdminUsersComponent } from './componentes/home-admin-users/home-admin-users.component';
+import { ModalNewProductsComponent } from './componentes/modal-new-products/modal-new-products.component';
+
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -30,6 +42,8 @@ import { HomeAdminProductsComponent } from './componentes/home-admin-products/ho
     HomeAdminComponent,
     ModalNewUsersComponent,
     HomeAdminProductsComponent,
+    HomeAdminUsersComponent,
+    ModalNewProductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +59,13 @@ import { HomeAdminProductsComponent } from './componentes/home-admin-products/ho
     MatNativeDateModule,
     MatRadioModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

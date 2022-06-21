@@ -1,31 +1,58 @@
 {
   "users": [
     {
-      "id": 2,
-      "email": "li3333444443@gmail.com",
-      "password": "1234",
+      "id": 1,
+      "email": "li@gmail.com",
+      "password": "123456",
       "roles": {
         "admin": false
       }
     },
     {
-      "id": 4,
-      "email": "estefany@gmail.com",
-      "password": "22344343",
-      "roles": {
-        "admin": true
-      }
-    },
-    {
-      "id": 1,
-      "email": "luciana222@gmail.com",
-      "password": "1452",
+      "id": 2,
+      "email": "liliii222888822222@gmail.com",
+      "password": "1236",
       "roles": {
         "admin": true
       }
     }
   ],
   "products": [
+    {
+      "name": "azucar",
+      "price": 2,
+      "image": "no hay",
+      "type": "Desayuno",
+      "id": 1
+    },
+    {
+      "name": "arroz2",
+      "price": 5,
+      "image": "tampoco hay",
+      "type": "Desayuno",
+      "id": 2
+    },
+    {
+      "name": "ss",
+      "price": 5,
+      "image": "rrr",
+      "type": "Almuerzo",
+      "id": 3
+    },
+    {
+      "name": "rrr8",
+      "price": 8,
+      "image": "eee",
+      "type": "Almuerzo",
+      "id": 4
+    },
+    {
+      "name": "eeee",
+      "price": 10,
+      "image": "rrr",
+      "type": "Desayuno",
+      "id": 6
+    }
   ],
   "profile": {
     "name": "typicode"
