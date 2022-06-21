@@ -13,7 +13,7 @@
       "email": "estefany@gmail.com",
       "password": "22344343",
       "roles": {
-        "admin": true
+        "admin": false
       }
     }
   ],
