@@ -3,9 +3,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Users } from '../employees';
 
-const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'})
-}
+// const httpOptions = {
+//   headers: new HttpHeaders({'Content-Type': 'application/json'})
+// }
 
 @Injectable({
   providedIn: 'root'
@@ -39,3 +39,26 @@ export class UsersService {
     return this.http.put<any>(this.url+id, users)
   }
 }
+
+// export class ProductsService {
+
+//   private url = 'http://localhost:3000/products/';
+
+//   constructor(private http: HttpClient) { }
+
+//   getProductsMethod(){
+//     return this.http.get<any>(this.url);
+//   }
+
+//   postProductsMethod(data: any){
+//     return this.http.post<any>(this.url,data)
+//   }
+
+//   deleteProductsMethod(id:number){
+//     return this.http.delete<any>(this.url+id);
+//   }
+
+//   updateProductsMethod(data: any, id: number) {
+//     return this.http.put<any>(this.url+id, data)
+//   }
+// }

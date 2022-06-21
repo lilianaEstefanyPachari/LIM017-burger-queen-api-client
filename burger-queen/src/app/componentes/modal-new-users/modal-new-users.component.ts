@@ -10,6 +10,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class ModalNewUsersComponent implements OnInit {
   newUserForm !: FormGroup;
   actionBtn: string = 'Guardar'
+  actionTitle: string = 'Formulario para añadir usuarios'
   // roles:any
 
   constructor(private formBuilder: FormBuilder,
@@ -44,6 +45,7 @@ export class ModalNewUsersComponent implements OnInit {
     //   this.newUserForm.controls['roles'].setValue(this.roles);
 
     // }
+      this.actionTitle = 'Formulario para actualizar usuarios'
       this.actionBtn = 'Actualizar'
       this.newUserForm.controls['id'].setValue(this.editData.id);
       this.newUserForm.controls['email'].setValue(this.editData.email);
