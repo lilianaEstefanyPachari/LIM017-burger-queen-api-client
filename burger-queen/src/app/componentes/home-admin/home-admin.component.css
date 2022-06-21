@@ -4,12 +4,14 @@
 }
 
 .homeAdmin {
-  height: 100vh;
+  height: 208px;
   width: 100%;
-  background-image: url("../../../assets/img/fondoHamburguesa.png");
+  background-color: black;
+  /* background-image: url(fondoHamburguesa.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 }
+
 
 nav {
   display: flex;
@@ -17,7 +19,7 @@ nav {
   padding: 20px;
   background-color: rgba(249, 244, 244, 0.78);
   width: 96%;
-  height: 10vh;
+  height: 90px;
   margin: 10px auto;
 }
 
@@ -28,6 +30,8 @@ nav {
 
 .profile h4 {
   margin-left: 20px;
+  font-size: 1.8em;
+  margin-top: 15px;
 }
 
 .fa-solid {
@@ -47,7 +51,7 @@ nav {
   background-color: rgba(249, 244, 244, 0.78);
   width: 96%;
   margin: auto;
-  height: 87vh;
+  height: 1052px;
 }
 
 .adminOptions {
@@ -60,8 +64,8 @@ nav {
 .optionEmployees {
   display: flex;
   background-color: #FFCA40;
-  width: 140px;
-  height: 60px;
+  width: 168px;
+  height: 65px;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
@@ -74,12 +78,14 @@ nav {
 
 .optionEmployees p {
   font-size: 20px;
+  margin-left: 8px;
+  margin-top: 7px;
 }
 .optionProducts {
   display: flex;
   background-color: white;
-  width: 140px;
-  height: 60px;
+  width: 168px;
+  height: 65px;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
@@ -92,6 +98,11 @@ nav {
 
 .optionProducts .fa-solid {
   font-size: 30px;
+}
+
+.optionProducts p {
+  margin-left: 8px;
+  margin-top: 7px;
 }
 
 .adminAddUsers {
@@ -109,7 +120,7 @@ nav {
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  margin: 0 20px;
+  margin: 0 37px;
 }
 
 .adminAddUsers .fa-solid{

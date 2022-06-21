@@ -45,6 +45,7 @@ export class HomeAdminUsersComponent implements OnInit {
 
   openDialog() {
     this.modalNewUser.open(ModalNewUsersComponent, {
+      minWidth: "450px",
       width:"30%"
     }).afterClosed().subscribe(val=>{
       if(val==="save"){

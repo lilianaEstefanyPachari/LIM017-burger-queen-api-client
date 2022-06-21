@@ -13,7 +13,7 @@
       "email": "liliii222888822222@gmail.com",
       "password": "1236",
       "roles": {
-        "admin": true
+        "admin": false
       }
     }
   ],
@@ -38,13 +38,6 @@
       "image": "rrr",
       "type": "Almuerzo",
       "id": 3
-    },
-    {
-      "name": "rrr8",
-      "price": 8,
-      "image": "eee",
-      "type": "Almuerzo",
-      "id": 4
     },
     {
       "name": "eeee",
