@@ -18,8 +18,8 @@
     },
     {
       "id": 3,
-      "email": "fvvf",
-      "password": "dfvfd",
+      "email": "ana@gmail.com",
+      "password": "1234567",
       "roles": {
         "admin": true
       }

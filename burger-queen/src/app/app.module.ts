@@ -28,6 +28,7 @@ import { ModalNewUsersComponent } from './componentes/modal-new-users/modal-new-
 import { HomeAdminProductsComponent } from './componentes/home-admin-products/home-admin-products.component';
 import { HomeAdminUsersComponent } from './componentes/home-admin-users/home-admin-users.component';
 import { ModalNewProductsComponent } from './componentes/modal-new-products/modal-new-products.component';
+import { HomeWaiterComponent } from './componentes/home-waiter/home-waiter.component';
 
 
 
@@ -44,6 +45,7 @@ import { ModalNewProductsComponent } from './componentes/modal-new-products/moda
     HomeAdminProductsComponent,
     HomeAdminUsersComponent,
     ModalNewProductsComponent,
+    HomeWaiterComponent,
   ],
   imports: [
     BrowserModule,
