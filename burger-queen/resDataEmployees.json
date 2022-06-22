@@ -15,6 +15,14 @@
       "roles": {
         "admin": false
       }
+    },
+    {
+      "id": 3,
+      "email": "fvvf",
+      "password": "dfvfd",
+      "roles": {
+        "admin": true
+      }
     }
   ],
   "products": [
@@ -38,13 +46,6 @@
       "image": "rrr",
       "type": "Almuerzo",
       "id": 3
-    },
-    {
-      "name": "eeee",
-      "price": 10,
-      "image": "rrr",
-      "type": "Desayuno",
-      "id": 6
     }
   ],
   "profile": {

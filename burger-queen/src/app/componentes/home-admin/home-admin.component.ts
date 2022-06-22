@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { Users } from 'src/app/employees';
-import { UsersService } from 'src/app/services/users.service';
-import { ModalNewUsersComponent } from '../modal-new-users/modal-new-users.component';
 
 @Component({
   selector: 'app-home-admin',
@@ -10,48 +6,57 @@ import { ModalNewUsersComponent } from '../modal-new-users/modal-new-users.compo
   styleUrls: ['./home-admin.component.css']
 })
 export class HomeAdminComponent implements OnInit {
-  users: Users[] = [];
-  msj = 'administrador'
-  msj2 = 'empleado'
+  //recibira data del componente padre, @es un decorador de quien recibira
+  renderTableControler:string = "userTable";
 
-  constructor(private usersService: UsersService, private modalNewUser:MatDialog) { }
+
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.getAllUsers();
+    // this.getAllUsers();
+  }
+  setStateOfViewProducts(){
+    console.log("cambie el estado a product")
+    this.renderTableControler = "productsTable"
+  }
+  setStateOfViewUsers(){
+    console.log("cambie el estado a users")
+    this.renderTableControler = "userTable"
   }
 
-  getAllUsers(): void {
-    this.usersService.getUsersMethod().subscribe((users) => (this.users = users, console.log(users)));
-  }
+  // getAllUsers(): void {
+  //   this.usersService.getUsersMethod().subscribe((users) => (this.users = users, console.log(users)));
+  // }
 
-  deleteUsers(users: Users){
-    this.usersService
-    .deleteUsersMethod(users)
-    .subscribe(
-    (users) => (this.users = this.users.filter(u => u.id !== users.id)));
-    this.getAllUsers();
-  }
+  // deleteUsers(users: Users){
+  //   this.usersService
+  //   .deleteUsersMethod(users)
+  //   .subscribe(
+  //   (users) => (this.users = this.users.filter(u => u.id !== users.id)));
+  //   this.getAllUsers();
+  // }
 
-  editUsers(row: any){
-    this.modalNewUser.open(ModalNewUsersComponent, {
-      width : "30%",
-      data : row
-    }).afterClosed().subscribe((value) =>{
-      if (value==="update"){
-        this.getAllUsers();
-      }
-    })
-  }
+  // editUsers(row: any){
+  //   this.modalNewUser.open(ModalNewUsersComponent, {
+  //     width : "30%",
+  //     data : row
+  //   }).afterClosed().subscribe((value) =>{
+  //     if (value==="update"){
+  //       this.getAllUsers();
+  //     }
+  //   })
+  // }
 
-  openDialog() {
-    this.modalNewUser.open(ModalNewUsersComponent, {
-      width:"30%"
-    }).afterClosed().subscribe(val=>{
-      if(val==="save"){
-        this.getAllUsers();
-      }
-    })
-  }
+  // openDialog() {
+  //   this.modalNewUser.open(ModalNewUsersComponent, {
+  //     width:"30%"
+  //   }).afterClosed().subscribe(val=>{
+  //     if(val==="save"){
+  //       this.getAllUsers();
+  //     }
+  //   })
+  // }
 
 
   // obtenerEmpleados(){

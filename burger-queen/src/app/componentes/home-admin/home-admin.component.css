@@ -4,21 +4,22 @@
 }
 
 .homeAdmin {
-  height: 20%;
+  height: 22%;
   width: 100%;
-  /* background-image: url(fondoHamburguesa.png);
-  background-repeat: no-repeat;
-  background-size: cover; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 5px 19px;
   background-color: rgba(249, 244, 244, 0.78);
   width: 96%;
-  height: 50%;
+  height: 40%;
   margin: 10px auto;
 }
 
@@ -31,6 +32,7 @@ nav {
   margin-left: 20px;
   font-size: 1.8em;
   margin-top: 15px;
+  font-weight: 600;
 }
 
 .fa-solid {
@@ -56,52 +58,69 @@ nav {
 .adminOptions {
   display: flex;
   width: 96%;
-  margin: 0 auto;
-  height: 100px;
+  margin: 5px auto;
+  height: 90%;
+  justify-content: center;
+  align-items: center;
 }
 
 .optionEmployees {
   display: flex;
   background-color: #FFCA40;
-  width: 168px;
-  height: 65px;
+  width: 50%;
+  height: 90%;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
-  margin: 20px 20px 10px 20px;
+  border-radius: 7px 0 0 7px;
 }
 
-.optionEmployees .fa-regular {
-  font-size: 30px;
+
+.optionEmployees .fa-regular, .optionProducts .fa-solid, .optionProductsChange .fa-solid {
+  font-size: 40px;
 }
 
-.optionEmployees p {
-  font-size: 20px;
-  margin-left: 8px;
+.optionEmployees p, .optionProducts p {
+  font-weight: 500;
+  font-size: 26px;
+  margin-left: 22px;
+  margin-top: 7px;
+}
+/*cambio de color de btn */
+.optionEmployeesChange {
+  background-color: white;
+  display: flex;
+  width: 50%;
+  height: 90%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px 0 0 7px;
+  font-size: 40px;
+}
+.optionEmployeesChange p, .optionProductsChange p {
+  font-weight: 500;
+  font-size: 26px;
+  margin-left: 22px;
   margin-top: 7px;
 }
 .optionProducts {
   display: flex;
   background-color: white;
-  width: 168px;
-  height: 65px;
+  width: 50%;
+  height: 90%;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
-  margin: 20px 20px 10px 20px;
-}
-
-.optionProducts {
+  border-radius: 0 7px 7px 0;
   font-size: 20px;
 }
-
-.optionProducts .fa-solid {
-  font-size: 30px;
-}
-
-.optionProducts p {
-  margin-left: 8px;
-  margin-top: 7px;
+/*cambio de color de btn */
+.optionProductsChange {
+  background-color: #FFCA40;
+  display: flex;
+  width: 50%;
+  height: 90%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 7px 7px 0;
 }
 
 .adminAddUsers {
@@ -135,9 +154,14 @@ nav {
   cursor: pointer;
 }
 
+.tables{
+  height: 75%;
+}
+
 .table {
   margin: 20px auto;
   width: 90%;
+
 }
 
 .tableHeader {

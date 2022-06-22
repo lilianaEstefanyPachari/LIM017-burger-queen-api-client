@@ -1,16 +1,103 @@
 .example-spacer {
     flex: 1 1 auto;
   }
+/* //mat-input focused color */
+.mat-form-field-underline, .ng-tns-c84-8, .ng-star-inserted, .mat-form-field-subscript-wrapper{
+  color: black!important;
+}
+
+/* // mat-label focused style */
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+  background: black!important;
+}
+
+.mat-input-element {
+  caret-color: black;
+}
+.filter{
+  font-size: 1.3em;
+}
+
+  .crudProductsContainer{
+    background-color: rgba(249, 244, 244, 0.78);
+    width: 96%;
+    margin: 9px auto;
+    height: 100%;
+    /* margin-top: 20px; */
+    padding-top: 20px;
+  }
+
+
   table {
+    margin: 7px auto;
     width: 100%;
+  }
+  th{
+    background-color: #FFCA40;
+    font-size: 1.6em;
+    color: black;
+    font-weight: 600;
+  }
+
+  td{
+    /* background-color: #FFCA40; */
+    font-size: 20px;
+    color: black;
+    /* font-weight: 600; */
+  }
+  .contentTable{
+    margin: 7px auto;
+    width: 94%;
   }
 
   .mat-form-field {
     font-size: 14px;
     width: 100%;
   }
+  .deleteIcon{
+    color: rgba(226, 6, 6, 0.904);
 
+  }
+  mat-icon{
+    font-size: 30px;
+    margin-left: 15px;
+  }
+.editIcon{
+  color: black;
+}
   .container{
     max-width: 1200px;
     margin: 0 auto;
   }
+  .adminAddUsers {
+    display: flex;
+    width: 96%;
+    margin: 0px auto;
+    height: 60px;
+  }
+
+  .adminAddUsers .optionAddUsers {
+    display: flex;
+    width: 180px;
+    height: 50px;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin: 0 9px;
+  }
+
+  .adminAddUsers .fa-solid{
+    font-size: 30px;
+  }
+
+  .adminAddUsers p {
+    font-size: 20px;
+    margin-left:5px;
+    margin-top: 10px;
+  }
+
+  .optionAddUsers {
+    cursor: pointer;
+  }
+
