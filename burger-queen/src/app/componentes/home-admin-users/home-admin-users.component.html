@@ -18,8 +18,7 @@
       </div>
     </div> -->
 
-<section class ="adminUsersContainer">
-  <app-home-admin></app-home-admin>
+
   <section class="crudUsersContainer">
     <div class="adminAddUsers">
       <div class="optionAddUsers" (click)="openDialog()">
@@ -42,14 +41,16 @@
           <td *ngIf="employ.roles.admin===true">{{msj}}</td>
           <td *ngIf="employ.roles.admin===false">{{msj2}}</td>
           <td class="actionButtons">
-            <i class="iconDelete fa-solid fa-trash-can" (click)="deleteUsers(employ)"></i>
-            <i class="iconUpdate fa-solid fa-pen-to-square" (click)="editUsers(employ)"></i>
+            <!-- <i class="iconDelete fa-solid fa-trash-can" (click)="deleteUsers(employ)"></i>
+            <i class="iconUpdate fa-solid fa-pen-to-square" (click)="editUsers(employ)"></i> -->
+            <i class="iconUpdate fa-solid fa-pen" (click)="editUsers(employ)"></i>
+            <i class="iconDelete fa-solid fa-trash" (click)="deleteUsers(employ)"></i>
           </td>
         </tr>
       </tbody>
     </table>
   </section>
-</section>
+
 
 <!-- <ng-template #msj2>
   <td>{{msj2}}</td>
