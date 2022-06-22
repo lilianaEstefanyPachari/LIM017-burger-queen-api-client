@@ -34,7 +34,8 @@ export class HomeAdminUsersComponent implements OnInit {
 
   editUsers(row: any){
     this.modalNewUser.open(ModalNewUsersComponent, {
-      width : "30%",
+      minWidth: "450px",
+      width:"30%",
       data : row
     }).afterClosed().subscribe((value) =>{
       if (value==="update"){
