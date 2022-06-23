@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,12 +21,12 @@ import {MatSortModule} from '@angular/material/sort';
 //componentes
 import { LoginComponent } from './componentes/login/login.component';
 import { HomeComponent } from './componentes/home/home.component';
-import { HomeAdminComponent } from './componentes/home-admin/home-admin.component';
+import { HomeAdminComponent } from './componentes/homeAdmin/home-admin/home-admin.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ModalNewUsersComponent } from './componentes/modal-new-users/modal-new-users.component';
-import { HomeAdminProductsComponent } from './componentes/home-admin-products/home-admin-products.component';
-import { HomeAdminUsersComponent } from './componentes/home-admin-users/home-admin-users.component';
-import { ModalNewProductsComponent } from './componentes/modal-new-products/modal-new-products.component';
+import { ModalNewUsersComponent } from './componentes/homeAdmin/modal-new-users/modal-new-users.component';
+import { HomeAdminProductsComponent } from './componentes/homeAdmin/home-admin-products/home-admin-products.component';
+import { HomeAdminUsersComponent } from './componentes/homeAdmin/home-admin-users/home-admin-users.component';
+import { ModalNewProductsComponent } from './componentes/homeAdmin/modal-new-products/modal-new-products.component';
 import { HomeWaiterComponent } from './componentes/home-waiter/home-waiter.component';
 
 

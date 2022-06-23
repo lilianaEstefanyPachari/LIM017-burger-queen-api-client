@@ -6,7 +6,7 @@
 .homeContainer {
     height: 100vh;
     width: 100%;
-    background-image: url("../../../assets/img/fondoHamburguesa.png");
+    background-image: url("../../../../assets/img/fondoHamburguesa.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
