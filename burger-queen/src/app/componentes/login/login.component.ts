@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         if(users && users.roles.admin){
           alert('logueado con exito / ADMINNNNN');
           this.loginForm.reset();
-          this.router.navigate(['/home']);
+          this.router.navigate(['/admin/users']);
         }
         else if(users && users.roles.admin === false){
           alert('logueado con exito / EMPLEADO');

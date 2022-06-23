@@ -46,6 +46,13 @@
       "image": "rrr",
       "type": "Almuerzo",
       "id": 3
+    },
+    {
+      "name": "jjjj",
+      "price": 5,
+      "image": "yy",
+      "type": "Desayuno",
+      "id": 4
     }
   ],
   "profile": {

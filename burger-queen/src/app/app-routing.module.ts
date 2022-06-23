@@ -10,9 +10,14 @@ import { HomeWaiterComponent } from './componentes/home-waiter/home-waiter.compo
 const routes: Routes = [
   {path : '', component: LoginComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'admin', component: HomeAdminComponent},
-  {path: 'admin/users', component: HomeAdminUsersComponent},
-  {path: 'admin/products', component: HomeAdminProductsComponent},
+  {path: 'admin', component: HomeAdminComponent,
+  children: [
+    {path: 'users', component: HomeAdminUsersComponent},
+    {path: 'products', component: HomeAdminProductsComponent}
+  ]
+  },
+  // {path: 'admin/users', component: HomeAdminUsersComponent},
+  // {path: 'admin/products', component: HomeAdminProductsComponent},
   {path: 'waiter', component: HomeWaiterComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
