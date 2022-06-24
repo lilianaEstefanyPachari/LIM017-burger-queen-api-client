@@ -33,11 +33,18 @@ export class LoginComponent implements OnInit {
         if(users && users.roles.admin){
           alert('logueado con exito / ADMINNNNN');
           this.loginForm.reset();
+          // this.router.navigate(['/admin/users']);
+          localStorage.setItem('roles','admin')
+          localStorage.setItem('userEmail',users.email)
           this.router.navigate(['/admin/users']);
         }
         else if(users && users.roles.admin === false){
           alert('logueado con exito / EMPLEADO');
           this.loginForm.reset();
+
+          localStorage.setItem('roles','employ')
+          localStorage.setItem('userEmail',users.email)
+
           this.router.navigate(['/waiter']);
         }
         else{
