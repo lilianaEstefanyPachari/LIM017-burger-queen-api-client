@@ -25,6 +25,10 @@ export class HomeAdminComponent implements OnInit {
     this.renderTableControler = "userTable"
   }
 
+  logOut(){
+    localStorage.clear();
+  }
+
   // getAllUsers(): void {
   //   this.usersService.getUsersMethod().subscribe((users) => (this.users = users, console.log(users)));
   // }
