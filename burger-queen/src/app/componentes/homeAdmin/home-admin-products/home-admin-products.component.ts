@@ -5,6 +5,7 @@ import { ProductsService } from 'src/app/services/products.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-home-admin-products',
@@ -19,7 +20,7 @@ export class HomeAdminProductsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private modalNewProduct:MatDialog, private productsService:ProductsService){
+  constructor(private modalNewProduct:MatDialog, private productsService:ProductsService, private toastr: ToastrService){
 
   }
 
@@ -78,11 +79,13 @@ export class HomeAdminProductsComponent implements OnInit {
     this.productsService.deleteProductsMethod(id)
     .subscribe({
       next: () => {
-        alert('Producto eliminado con exito');
+        this.toastr.success('Producto eliminado', 'Eliminado con exito');
         this.getAllProducts()
       },
       error: () => {
-        alert('error al eliminar el producto')
+        this.toastr.error('No se pudo eliminar producto', 'ERROR', {
+          timeOut: 3000,
+        });
       }
     })
   }

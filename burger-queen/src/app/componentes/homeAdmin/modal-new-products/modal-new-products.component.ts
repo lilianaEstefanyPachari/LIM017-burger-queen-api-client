@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ProductsService } from 'src/app/services/products.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -17,6 +18,7 @@ export class ModalNewProductsComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
     private productsService: ProductsService,
     private dialogRef: MatDialogRef<ModalNewProductsComponent>,
+    private toastr: ToastrService,
     @Inject(MAT_DIALOG_DATA) public editData: any,
   ) { }
 
@@ -45,12 +47,14 @@ export class ModalNewProductsComponent implements OnInit {
         this.productsService.postProductsMethod(this.productForm.value)
         .subscribe({
           next: () => {
-            alert('producto añadido correctamente');
+            this.toastr.success('Producto añadido', 'Registro con exito');
             this.productForm.reset();
             this.dialogRef.close('save');
           },
           error: () => {
-            alert('error al añadir producto')
+            this.toastr.error('No se pudo añadir producto', 'ERROR', {
+              timeOut: 3000,
+            });
           }
         })
       }
@@ -63,12 +67,14 @@ export class ModalNewProductsComponent implements OnInit {
     this.productsService.updateProductsMethod(this.productForm.value, this.editData.id)
     .subscribe({
       next: (res) => {
-        alert('Producto actualizado con exito');
+        this.toastr.success('Producto actualizado', 'Actualizado con exito');
         this.productForm.reset();
         this.dialogRef.close('update');
       },
       error: () => {
-        alert('error al actualizar producto')
+        this.toastr.error('No se pudo actualizar producto', 'ERROR', {
+          timeOut: 3000,
+        });
       }
     })
   }

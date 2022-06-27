@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { UsersService } from 'src/app/services/users.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-modal-new-users',
   templateUrl: './modal-new-users.component.html',
@@ -15,6 +16,7 @@ export class ModalNewUsersComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private usersService: UsersService,
+    private toastr: ToastrService,
     @Inject(MAT_DIALOG_DATA) public editData : any,
     private dialogRef: MatDialogRef<ModalNewUsersComponent>) { }
 
@@ -72,11 +74,15 @@ export class ModalNewUsersComponent implements OnInit {
 
         this.usersService.postUsersMethod(this.newUserForm.value).subscribe({
           next: ()=> {
-            alert('exito');
+            this.toastr.success('Usuario añadido', 'Registro con exito');
             this.newUserForm.reset();
             this.dialogRef.close('save');
           },
-          error: () => { alert('error')}
+          error: () => {
+            this.toastr.error('No se pudo añadir usuario', 'ERROR', {
+              timeOut: 3000,
+            });
+          }
         })
       }
     }else {
@@ -103,12 +109,14 @@ export class ModalNewUsersComponent implements OnInit {
     this.usersService.updateUsersMethod(this.newUserForm.value, this.editData.id)
     .subscribe({
       next: () =>{
-        alert('Usuario actualizado correctamente');
+        this.toastr.success('Usuario actualizado', 'Actualizado con exito');
         this.newUserForm.reset();
         this.dialogRef.close('update');
       },
       error: (erro)=>{
-        alert('No se pudo actualizar');
+        this.toastr.error('No se pudo actualizar usuario', 'ERROR', {
+          timeOut: 3000,
+        });
         console.log(erro);
       }
     })

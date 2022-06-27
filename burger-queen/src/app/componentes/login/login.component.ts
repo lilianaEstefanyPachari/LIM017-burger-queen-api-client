@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Login } from 'src/app/models/login';
 import { Users } from 'src/app/employees';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ import { Users } from 'src/app/employees';
 export class LoginComponent implements OnInit {
   loginForm : FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private router: Router, private http: HttpClient, private toastr: ToastrService) {
     this.loginForm = this.fb.group({
       email : ['', Validators.required],
       password : ['', Validators.required]
@@ -31,7 +32,7 @@ export class LoginComponent implements OnInit {
           return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
         });
         if(users && users.roles.admin){
-          alert('logueado con exito / ADMINNNNN');
+          this.toastr.success('Administrador', 'Logueado con exito');
           this.loginForm.reset();
           // this.router.navigate(['/admin/users']);
           localStorage.setItem('roles','admin')
@@ -39,7 +40,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/admin/users']);
         }
         else if(users && users.roles.admin === false){
-          alert('logueado con exito / EMPLEADO');
+          this.toastr.success('Empleado', 'Logueado con exito');
           this.loginForm.reset();
 
           localStorage.setItem('roles','employ')
@@ -48,10 +49,15 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/waiter']);
         }
         else{
-          alert('usuario no encontrado');
+          this.toastr.error('Usuario o contraseña incorrectas', 'ERROR', {
+            timeOut: 3000,
+          });
+          // alert('usuario no encontrado');
         }
       },error: () => {
-        alert('algo salio mal');
+        this.toastr.error('Algo salio mal', 'ERROR', {
+          timeOut: 3000,
+        });
       }
     })
   }

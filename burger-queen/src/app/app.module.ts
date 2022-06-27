@@ -17,12 +17,13 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 //componentes
 import { LoginComponent } from './componentes/login/login.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { HomeAdminComponent } from './componentes/homeAdmin/home-admin/home-admin.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalNewUsersComponent } from './componentes/homeAdmin/modal-new-users/modal-new-users.component';
 import { HomeAdminProductsComponent } from './componentes/homeAdmin/home-admin-products/home-admin-products.component';
 import { HomeAdminUsersComponent } from './componentes/homeAdmin/home-admin-users/home-admin-users.component';
@@ -66,7 +67,8 @@ import { HomeWaiterComponent } from './componentes/home-waiter/home-waiter.compo
     MatIconModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
