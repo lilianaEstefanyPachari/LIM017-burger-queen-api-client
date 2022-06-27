@@ -1,20 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-// import { Users } from '../employees';
+import { Users } from '../employees';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  // private url = 'http://localhost:3000/users';
+  private url = 'http://localhost:3000/users';
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  // getUsers(): Observable<Users[]> {
-  //   return this.http.get<Users[]>(this.url);
-  // }
+  getUsers(): Observable<Users[]> {
+    return this.http.get<Users[]>(this.url);
+  }
  isLoggedIn(){
   return localStorage.getItem('roles')!= null
  }

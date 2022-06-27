@@ -18,6 +18,7 @@ export class RoleGuard implements CanActivate {
     }else{
       alert('no tienes acceso, inicia sesion con una cuenta autorizada')
       this.route.navigate(['']);
+      // manejar rutas con local store
       return false;
     }
 

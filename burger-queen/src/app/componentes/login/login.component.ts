@@ -1,10 +1,9 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Login } from 'src/app/models/login';
 import { Users } from 'src/app/employees';
 import { ToastrService } from 'ngx-toastr';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent implements OnInit {
   loginForm : FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router, private http: HttpClient, private toastr: ToastrService) {
+  constructor(private fb: FormBuilder, private router: Router, private toastr: ToastrService, private loginService: LoginService) {
     this.loginForm = this.fb.group({
       email : ['', Validators.required],
       password : ['', Validators.required]
@@ -25,7 +24,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this.http.get<Users[]>("http://localhost:3000/users")
+    this.loginService.getUsers()
     .subscribe({
       next: (res) =>{
         const users = res.find((a:Users)=>{
