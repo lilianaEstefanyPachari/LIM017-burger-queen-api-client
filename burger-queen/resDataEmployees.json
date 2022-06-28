@@ -1,14 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "email": "li@gmail.com",
-      "password": "123456",
-      "roles": {
-        "admin": false
-      }
-    },
-    {
       "id": 2,
       "email": "liliii222888822222@gmail.com",
       "password": "1236",
@@ -23,36 +15,23 @@
       "roles": {
         "admin": true
       }
+    },
+    {
+      "id": 4,
+      "email": "estefany@gmail.com",
+      "password": "123456",
+      "roles": {
+        "admin": false
+      }
     }
   ],
   "products": [
-    {
-      "name": "Papas fritas",
-      "price": 2,
-      "image": "no hay",
-      "type": "Almuerzo",
-      "id": 1
-    },
     {
       "name": "Aros de cebolla",
       "price": 5,
       "image": "tampoco hay",
       "type": "Almuerzo",
       "id": 2
-    },
-    {
-      "name": "Agua de 500ml",
-      "price": 5,
-      "image": "rrr",
-      "type": "Almuerzo",
-      "id": 3
-    },
-    {
-      "name": "Gaseosa de 500ml",
-      "price": 5,
-      "image": "yy",
-      "type": "Almuerzo",
-      "id": 4
     },
     {
       "name": "Agua de 750ml",
@@ -67,6 +46,20 @@
       "image": "hh",
       "type": "Almuerzo",
       "id": 6
+    },
+    {
+      "name": "Hamburguesa doble",
+      "price": 20,
+      "image": "--",
+      "type": "Almuerzo",
+      "id": 7
+    },
+    {
+      "name": "Hamburguesa simple",
+      "price": 13,
+      "image": "-",
+      "type": "Desayuno",
+      "id": 8
     }
   ],
   "profile": {
