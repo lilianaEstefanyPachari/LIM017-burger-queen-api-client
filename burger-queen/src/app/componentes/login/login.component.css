@@ -5,49 +5,125 @@
   align-items: center;
   height: 100vh;
   width: 100%;
-  background-image: url("../../../assets/img/fondoHamburguesa.png");
+  background-image: url("../../../assets/img/backgroundLogin.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-h1{
-  width: 35%;
-  font-family: 'Genos', sans-serif;
+.loginFormContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.titleLogin{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+}
+h2{
+  font-family: 'Orelega One', cursive;
   font-size: 70px;
-  text-align: center;
   color: white;
+  padding: 10px;
 }
 
 form {
   width: 90%;
-  max-width: 520px;
-  background: rgba(48, 45, 45, 0.5);
-  padding: 30px;
-  border-radius: 10px;
-}
-
-form .loginTitle {
-  text-align: center;
-  color: white;
-  font-size: 40px;
-  font-weight: 700;
+  max-width: 450px;
+  /* background: rgba(48, 45, 45, 0.5); */
+  padding: 15px;
 }
 
 form .form-label {
-  font-size: 25px;
+  font-size: 30px;
+  margin-bottom: 14px;
   color: white;
+  font-family: 'Sahitya', serif;
+}
+
+.text-danger{
+  font-size: 22px;
+  margin-top: 8px;
 }
 
 form .form-control{
   height: 60px;
+  font-size: 25px;
 }
 form .btn {
   width: 100%;
   height: 60px;
-  font-size: 25px;
+  font-size: 30px;
   background-color: #FFCA40;
   color: black;
   opacity: 1;
   margin-top: 15px;
+  font-family: 'Sahitya', serif;
+  font-weight: 900;
 }
 
+
+figure{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+figure img{
+  width: 350px;
+  height: 350px;
+}
+
+@media screen and (min-width:800px){
+  .loginContainer {
+    /* background-color: rgb(102, 20, 82); */
+    background-image: url("../../../assets/img/backgroundLaptop.png");
+      /* background-image: url("../../../assets/img/backgroundLaptop.png"); */
+      flex-direction: row-reverse;
+  }
+
+  .loginFormContainer{
+    width: 45%;
+    height: 90%;
+  }
+  .titleLogin{
+    margin-top: 0px;
+    padding-right: 20px;
+  }
+  h2{
+    font-size: 50px;
+    margin: 0 0 5px;
+  }
+  form {
+    width: 70%;
+  }
+  form .form-control{
+    height: 45px;
+    font-size: 18px;
+  }
+  form .form-label {
+    font-size: 23px;
+    margin-bottom: 8px;
+  }
+  .text-danger{
+    font-size: 18px;
+  }
+  form .btn {
+    height: 45px;
+    font-size: 23px;
+     /*margin-top: 15px;
+    font-weight: 900; */
+  }
+  figure{
+    width: 45%;
+    height: 90%;
+    padding-left: 40px;
+    margin:0;
+  }
+  figure img{
+    width: 400px;
+    height: 400px;
+  }
+}
