@@ -5,7 +5,7 @@ import { HomeComponent } from './componentes/home/home.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { HomeAdminProductsComponent } from './componentes/homeAdmin/home-admin-products/home-admin-products.component';
 import { HomeAdminUsersComponent } from './componentes/homeAdmin/home-admin-users/home-admin-users.component';
-import { HomeWaiterComponent } from './componentes/home-waiter/home-waiter.component';
+import { HomeWaiterComponent } from './componentes/homeWaiter/home-waiter/home-waiter.component';
 import { PermissionGuard } from './guards/permission.guard';
 import { RoleGuard } from './guards/role.guard';
 

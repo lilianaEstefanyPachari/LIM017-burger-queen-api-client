@@ -1,0 +1,31 @@
+<section class="homeContainer">
+  <section class="homeWaiter">
+  <nav>
+    <div class="profile">
+      <i class="fa-solid fa-circle-user"></i>
+      <h4>Mesero</h4>
+    </div>
+    <div class="logOut" routerLink="" (click)="logOut()">
+      <img src="assets\img\cerrar-sesion.png">
+    </div>
+  </nav>
+  <section class="waiterContainer">
+    <div class="waiterOptions">
+      <div (click)="setStateOfViewOrders()" [className]="renderViewControler === 'viewOrders' ? 'optionNewOrders' : 'optionOrdersChange'">
+        <i class="fa-regular fa-user"></i><p>Ordenes</p>
+      </div>
+      <!-- <div class="optionListOrders" routerLink="listOrders"  (click)="setStateOfViewListOrders()" [className]="renderViewControler === 'productsTable' ? 'optionListOrdersChange' : 'optionListOrders'">
+        <i class="fa-solid fa-cart-shopping"></i><p>Lista de pedidos</p> -->
+      <div (click)="setStateOfViewListOrders()" [className]="renderViewControler === 'viewListOrders' ? 'optionListOrdersChange' : 'optionListOrders'">
+        <i class="fa-solid fa-cart-shopping"></i><p>Lista de pedidos</p>
+      </div>
+    </div>
+
+  </section>
+</section>
+<section class="cardsOrders">
+  <router-outlet></router-outlet>
+</section>
+</section>
+
+

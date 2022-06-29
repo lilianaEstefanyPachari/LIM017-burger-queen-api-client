@@ -2,8 +2,8 @@
   "users": [
     {
       "id": 2,
-      "email": "liliii222888822222@gmail.com",
-      "password": "1236",
+      "email": "li@gmail.com",
+      "password": "123456",
       "roles": {
         "admin": false
       }

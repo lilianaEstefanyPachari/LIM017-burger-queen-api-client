@@ -28,7 +28,7 @@ import { ModalNewUsersComponent } from './componentes/homeAdmin/modal-new-users/
 import { HomeAdminProductsComponent } from './componentes/homeAdmin/home-admin-products/home-admin-products.component';
 import { HomeAdminUsersComponent } from './componentes/homeAdmin/home-admin-users/home-admin-users.component';
 import { ModalNewProductsComponent } from './componentes/homeAdmin/modal-new-products/modal-new-products.component';
-import { HomeWaiterComponent } from './componentes/home-waiter/home-waiter.component';
+import { HomeWaiterComponent } from './componentes/homeWaiter/home-waiter/home-waiter.component';
 
 
 
