@@ -38,8 +38,9 @@
         <tr *ngFor="let employ of users">
           <th scope="row">{{employ.id}}</th>
           <td>{{employ.email}}</td>
-          <td *ngIf="employ.roles.admin===true">{{msj}}</td>
-          <td *ngIf="employ.roles.admin===false">{{msj2}}</td>
+          <td *ngIf="employ.roles.admin===true && employ.roles.mesero===false && employ.roles.cocina===false">{{msj}}</td>
+          <td *ngIf="employ.roles.admin===false && employ.roles.mesero===true && employ.roles.cocina===false">{{msj2}}</td>
+          <td *ngIf="employ.roles.admin===false && employ.roles.mesero===false && employ.roles.cocina===true">{{msj3}}</td>
           <td class="actionButtons">
             <i class="iconUpdate fa-solid fa-pen" (click)="editUsers(employ)"></i>
             <i class="iconDelete fa-solid fa-trash" (click)="deleteUsers(employ)"></i>

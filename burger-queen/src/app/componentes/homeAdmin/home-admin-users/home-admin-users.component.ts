@@ -13,7 +13,8 @@ import { ModalNewUsersComponent } from '../modal-new-users/modal-new-users.compo
 export class HomeAdminUsersComponent implements OnInit {
   users: Users[] = [];
   msj = 'administrador'
-  msj2 = 'empleado'
+  msj2 = 'mesera'
+  msj3 = 'chef'
 
   constructor(private usersService: UsersService, private modalNewUser:MatDialog, private toastr: ToastrService) { }
 

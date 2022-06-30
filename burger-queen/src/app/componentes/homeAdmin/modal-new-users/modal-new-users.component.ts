@@ -78,7 +78,8 @@ export class ModalNewUsersComponent implements OnInit {
             this.newUserForm.reset();
             this.dialogRef.close('save');
           },
-          error: () => {
+          error: (error) => {
+            console.log(error);
             this.toastr.error('No se pudo añadir usuario', 'ERROR', {
               timeOut: 3000,
             });
@@ -94,13 +95,23 @@ export class ModalNewUsersComponent implements OnInit {
     const dataObj: any = this.newUserForm.value
         const roles:string = dataObj.roles
         // console.log(roles)
-        if(roles==="administrador"){
+        if(roles==="Administrador"){
           dataObj.roles = {
             admin: true,
+            mesero: false,
+            cocina: false
           }
-        } else if(roles!="administrador") {
+        } else if(roles==="Mesera") {
           dataObj.roles = {
+            mesero: true,
             admin: false,
+            cocina: false
+          }
+        } else{
+          dataObj.roles = {
+            cocina: true,
+            admin: false,
+            mesero: false
           }
         }
   }
