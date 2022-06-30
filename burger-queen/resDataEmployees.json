@@ -23,6 +23,14 @@
       "roles": {
         "admin": false
       }
+    },
+    {
+      "email": "estef@gmail.com",
+      "password": "123456",
+      "roles": {
+        "admin": false
+      },
+      "id": 5
     }
   ],
   "products": [

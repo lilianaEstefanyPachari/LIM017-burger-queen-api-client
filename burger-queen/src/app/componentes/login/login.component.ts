@@ -24,37 +24,72 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this.loginService.getUsers()
+    this.loginService.postUsers(this.loginForm.value)
     .subscribe({
       next: (res) =>{
-        const users = res.find((a:Users)=>{
-          return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password
-        });
-        if(users && users.roles.admin){
+        console.log(res)
+
+        if(res && res.user.roles.admin){
           this.toastr.success('Administrador', 'Logueado con exito');
           this.loginForm.reset();
           // this.router.navigate(['/admin/users']);
           localStorage.setItem('roles','admin')
-          localStorage.setItem('userEmail',users.email)
+          localStorage.setItem('token',res.accessToken)
           this.router.navigate(['/admin/users']);
         }
-        else if(users && users.roles.admin === false){
-          this.toastr.success('Empleado', 'Logueado con exito');
+        if(res && res.user.roles.mesero){
+          this.toastr.success('Empleado-meser@', 'Logueado con exito');
           this.loginForm.reset();
 
-          localStorage.setItem('roles','employ')
-          localStorage.setItem('userEmail',users.email)
+          localStorage.setItem('roles','waiter')
+          localStorage.setItem('token',res.accessToken)
 
           this.router.navigate(['/waiter']);
         }
-        else{
+        if(res && res.user.roles.cocina){
+          this.toastr.success('Empleado-chef', 'Logueado con exito');
+          this.loginForm.reset();
+
+          localStorage.setItem('roles','chef')
+          localStorage.setItem('token',res.accessToken)
+
+          // this.router.navigate(['']);
+        }
+        else if(res.status === 400){
           this.toastr.error('Usuario o contraseña incorrectas', 'ERROR', {
             timeOut: 3000,
           });
           // alert('usuario no encontrado');
         }
-      },error: () => {
-        this.toastr.error('Algo salio mal', 'ERROR', {
+        // const users = res.find((e:Users)=>{
+        //   return e.email === this.loginForm.value.email && e.password === this.loginForm.value.password
+        // });
+        // if(users && users.roles.admin){
+        //   this.toastr.success('Administrador', 'Logueado con exito');
+        //   this.loginForm.reset();
+        //   // this.router.navigate(['/admin/users']);
+        //   localStorage.setItem('roles','admin')
+        //   localStorage.setItem('userEmail',users.email)
+        //   this.router.navigate(['/admin/users']);
+        // }
+        // else if(users && users.roles.admin === false){
+        //   this.toastr.success('Empleado', 'Logueado con exito');
+        //   this.loginForm.reset();
+
+        //   localStorage.setItem('roles','employ')
+        //   localStorage.setItem('userEmail',users.email)
+
+        //   this.router.navigate(['/waiter']);
+        // }
+        // else{
+        //   this.toastr.error('Usuario o contraseña incorrectas', 'ERROR', {
+        //     timeOut: 3000,
+        //   });
+        //   // alert('usuario no encontrado');
+        // }
+      },error: (res) => {
+        console.log(res)
+        this.toastr.error('Usuario o contraseña incorrectas', 'ERROR', {
           timeOut: 3000,
         });
       }

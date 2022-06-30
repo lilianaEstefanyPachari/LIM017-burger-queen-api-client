@@ -18,7 +18,7 @@ export class HomeWaiterComponent implements OnInit {
   }
   setStateOfViewOrders(){
     console.log("cambie el estado a viewOrders")
-    this.renderViewControler = "viewOrderss"
+    this.renderViewControler = "viewOrders"
   }
 
   logOut(){

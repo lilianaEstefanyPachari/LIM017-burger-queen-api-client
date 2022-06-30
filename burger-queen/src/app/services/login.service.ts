@@ -8,16 +8,17 @@ import { Users } from '../employees';
 })
 export class LoginService {
 
-  private url = 'http://localhost:3000/users';
+  private url = 'http://localhost:8080/login';
+  // private url = 'https://virtserver.swaggerhub.com/ssinuco/BurgerQueenAPI/2.0.0/login'
 
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<Users[]> {
-    return this.http.get<Users[]>(this.url);
+  postUsers(data: Users): Observable<any> {
+    return this.http.post<Users>(this.url,data);
   }
- isLoggedIn(){
-  return localStorage.getItem('roles')!= null
- }
+  isLoggedIn(){
+   return localStorage.getItem('roles')!= null
+  }
 
  haveRoleAccess(pathName:any){
   const userRole = localStorage.getItem('roles')
