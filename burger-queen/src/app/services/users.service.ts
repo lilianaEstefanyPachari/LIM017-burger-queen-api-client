@@ -27,16 +27,15 @@ import { Users } from '../employees';
 //   };
 // }
 
-const httpOptions = {
-  headers: new HttpHeaders({
-   'Content-Type':  'application/json',
-    Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuaXRhLmJvcmdAc3lzdGVycy54eXoiLCJpYXQiOjE2NTY1OTY2OTAsImV4cCI6MTY1NjYwMDI5MCwic3ViIjoiMSJ9.AcA90IpPnNofBoO3umLMmMmPv3NF6WDlhwwV1lKNkMo"
-  })
-};
+// const httpOptions = {
+//   headers: new HttpHeaders({
+//    'Content-Type':  'application/json',
+//     Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdyYWNlLmhvcHBlckBzeXN0ZXJzLnh5eiIsImlhdCI6MTY1MDIzMzkwOSwiZXhwIjoxNjUwMjM3NTA5LCJzdWIiOiIyIn0.nS99u-MBatZHbexMUenwsGdS8oV55BIaGwI6PSP7BC8"
+//   })
+// };
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root'})
+
 export class UsersService {
 
   private url = 'http://localhost:8080/users/';
@@ -55,9 +54,20 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
+  accessToken = localStorage.getItem("token")
+
+  httpOptions = () => (
+    {
+      headers: new HttpHeaders(
+        {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.accessToken}`,
+        })
+    })
+
   getUsersMethod(): Observable<any> {
-    console.log("fhffffffffffffffffffffffffffffffff",httpOptions)
-    return this.http.get<Users[]>(this.url, httpOptions);
+    console.log("fhffffffffffffffffffffffffffffffff",this.httpOptions())
+    return this.http.get<Users[]>(this.url, this.httpOptions());
   }
 
 
