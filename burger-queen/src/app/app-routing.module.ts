@@ -12,15 +12,18 @@ import { RoleGuard } from './guards/role.guard';
 const routes: Routes = [
   {path : '', component: LoginComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'admin', component: HomeAdminComponent, canActivate : [PermissionGuard,RoleGuard],
-  children: [
+  {path: 'admin', component: HomeAdminComponent,
+   canActivate : [PermissionGuard,RoleGuard],
+   children: [
     {path: 'users', component: HomeAdminUsersComponent},
     {path: 'products', component: HomeAdminProductsComponent}
   ]
   },
   // {path: 'admin/users', component: HomeAdminUsersComponent},
   // {path: 'admin/products', component: HomeAdminProductsComponent},
-  {path: 'waiter', component: HomeWaiterComponent, canActivate:[PermissionGuard,RoleGuard]},
+  {path: 'waiter', component: HomeWaiterComponent,
+   canActivate:[PermissionGuard,RoleGuard]
+  },
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
 

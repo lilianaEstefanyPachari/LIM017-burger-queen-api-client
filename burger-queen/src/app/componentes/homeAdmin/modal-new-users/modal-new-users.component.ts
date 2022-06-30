@@ -22,7 +22,7 @@ export class ModalNewUsersComponent implements OnInit {
 
   ngOnInit(): void {
     this.newUserForm = this.formBuilder.group({
-      id: ["",Validators.required],
+      // id: ["",Validators.required],
       email: ["",Validators.required],
       password: ["",Validators.required],
       roles: ["",Validators.required],
@@ -49,7 +49,7 @@ export class ModalNewUsersComponent implements OnInit {
     // }
       this.actionTitle = 'Formulario para actualizar usuarios'
       this.actionBtn = 'Actualizar'
-      this.newUserForm.controls['id'].setValue(this.editData.id);
+      // this.newUserForm.controls['id'].setValue(this.editData.id);
       this.newUserForm.controls['email'].setValue(this.editData.email);
       this.newUserForm.controls['password'].setValue(this.editData.password);
       this.newUserForm.controls['roles'].setValue(this.editData.roles);

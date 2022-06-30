@@ -72,6 +72,8 @@ nav {
   align-items: center;
 }
 
+
+
 .optionNewOrders {
   display: flex;
   background-color: #FFCA40;
@@ -80,6 +82,16 @@ nav {
   justify-content: center;
   align-items: center;
   border-radius: 7px 0 0 7px;
+}
+.optionOrdersChange{
+  background-color: white;
+  display: flex;
+  width: 50%;
+  height: 90%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px 0 0 7px;
+  font-size: 40px;
 }
 .optionNewOrders .fa-regular, .optionListOrders .fa-solid, .optionListOrdersChange .fa-solid {
   font-size: 40px;
@@ -93,13 +105,13 @@ nav {
 }
 /*cambio de color de btn */
 .optionListOrdersChange {
-  background-color: white;
+  background-color: #FFCA40;
   display: flex;
   width: 50%;
   height: 90%;
   justify-content: center;
   align-items: center;
-  border-radius: 7px 0 0 7px;
+  border-radius: 0 7px 7px 0;
   font-size: 40px;
 }
 .optionOrdersChange p, .optionListOrdersChange p {
@@ -119,15 +131,8 @@ nav {
   font-size: 20px;
 }
 /*cambio de color de btn */
-.optionListOrdersChange {
-  background-color: #FFCA40;
-  display: flex;
-  width: 50%;
-  height: 90%;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0 7px 7px 0;
-}
+
+
 
 /* .adminAddUsers {
   display: flex;
