@@ -42,6 +42,6 @@ export class UsersService {
   // actualizar usuarios
   updateUsersMethod(users: any, id: number) {
     // const deleteUrl = `${this.url}/${users.id}`;
-    return this.http.put<any>(this.url+id, users, this.httpOptions())
+    return this.http.patch<any>(this.url+id, users, this.httpOptions())
   }
 }
