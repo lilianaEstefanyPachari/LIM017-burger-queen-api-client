@@ -19,6 +19,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import {MatCardModule} from '@angular/material/card';
 
 //componentes
 import { LoginComponent } from './componentes/login/login.component';
@@ -29,6 +30,8 @@ import { HomeAdminProductsComponent } from './componentes/homeAdmin/home-admin-p
 import { HomeAdminUsersComponent } from './componentes/homeAdmin/home-admin-users/home-admin-users.component';
 import { ModalNewProductsComponent } from './componentes/homeAdmin/modal-new-products/modal-new-products.component';
 import { HomeWaiterComponent } from './componentes/homeWaiter/home-waiter/home-waiter.component';
+import { BreakfastComponent } from './componentes/homeWaiter/breakfast/breakfast.component';
+import { LunchComponent } from './componentes/homeWaiter/lunch/lunch.component';
 
 
 
@@ -46,6 +49,8 @@ import { HomeWaiterComponent } from './componentes/homeWaiter/home-waiter/home-w
     HomeAdminUsersComponent,
     ModalNewProductsComponent,
     HomeWaiterComponent,
+    BreakfastComponent,
+    LunchComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,6 +74,7 @@ import { HomeWaiterComponent } from './componentes/homeWaiter/home-waiter/home-w
     MatPaginatorModule,
     MatSortModule,
     ToastrModule.forRoot(),
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

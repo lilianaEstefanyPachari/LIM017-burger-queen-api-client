@@ -8,6 +8,8 @@ import { HomeAdminUsersComponent } from './componentes/homeAdmin/home-admin-user
 import { HomeWaiterComponent } from './componentes/homeWaiter/home-waiter/home-waiter.component';
 import { PermissionGuard } from './guards/permission.guard';
 import { RoleGuard } from './guards/role.guard';
+import { BreakfastComponent } from './componentes/homeWaiter/breakfast/breakfast.component';
+import { LunchComponent } from './componentes/homeWaiter/lunch/lunch.component';
 
 const routes: Routes = [
   {path : '', component: LoginComponent},
@@ -19,10 +21,12 @@ const routes: Routes = [
     {path: 'products', component: HomeAdminProductsComponent}
   ]
   },
-  // {path: 'admin/users', component: HomeAdminUsersComponent},
-  // {path: 'admin/products', component: HomeAdminProductsComponent},
   {path: 'waiter', component: HomeWaiterComponent,
-   canActivate:[PermissionGuard,RoleGuard]
+   canActivate:[PermissionGuard,RoleGuard],
+   children: [
+    {path: 'breakfast', component: BreakfastComponent},
+    {path: 'lunch', component: LunchComponent}
+  ]
   },
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];

@@ -11,13 +11,13 @@
   </nav>
   <section class="waiterContainer">
     <div class="waiterOptions">
-      <div (click)="setStateOfViewOrders()" [className]="renderViewControler === 'viewOrders' ? 'optionNewOrders' : 'optionOrdersChange'">
-        <i class="fa-regular fa-user"></i><p>Ordenes</p>
+      <div routerLink="breakfast" (click)="setStateOfViewOrders()" [className]="renderViewControler === 'viewOrders' ? 'optionNewOrders' : 'optionOrdersChange'">
+        <i class="fa-regular fa-user"></i><p>Desayuno</p>
       </div>
       <!-- <div class="optionListOrders" routerLink="listOrders"  (click)="setStateOfViewListOrders()" [className]="renderViewControler === 'productsTable' ? 'optionListOrdersChange' : 'optionListOrders'">
         <i class="fa-solid fa-cart-shopping"></i><p>Lista de pedidos</p> -->
-      <div (click)="setStateOfViewListOrders()" [className]="renderViewControler === 'viewListOrders' ? 'optionListOrdersChange' : 'optionListOrders'">
-        <i class="fa-solid fa-cart-shopping"></i><p>Lista de pedidos</p>
+      <div routerLink="lunch" (click)="setStateOfViewListOrders()" [className]="renderViewControler === 'viewListOrders' ? 'optionListOrdersChange' : 'optionListOrders'">
+        <i class="fa-solid fa-cart-shopping"></i><p>Almuerzo</p>
       </div>
     </div>
 

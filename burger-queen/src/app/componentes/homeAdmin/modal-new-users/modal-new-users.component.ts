@@ -24,7 +24,7 @@ export class ModalNewUsersComponent implements OnInit {
     this.newUserForm = this.formBuilder.group({
       // id: ["",Validators.required],
       email: ["",Validators.required],
-      password: ["",Validators.required],
+      password: [""],
       roles: ["",Validators.required],
     })
 
@@ -51,7 +51,7 @@ export class ModalNewUsersComponent implements OnInit {
       this.actionBtn = 'Actualizar'
       // this.newUserForm.controls['id'].setValue(this.editData.id);
       this.newUserForm.controls['email'].setValue(this.editData.email);
-      this.newUserForm.controls['password'].setValue(this.editData.password);
+      // this.newUserForm.controls['password'].setValue(this.editData.password);
       this.newUserForm.controls['roles'].setValue(this.editData.roles);
     }
     console.log(this.editData);
@@ -117,7 +117,13 @@ export class ModalNewUsersComponent implements OnInit {
   }
   updateUsers(){
     this.convertRoletoObject();
-    this.usersService.updateUsersMethod(this.newUserForm.value, this.editData.id)
+    console.log('holllllllllllllllllll',this.newUserForm.value)
+    if(this.newUserForm.value.password===''){
+      const updateData = {
+        email: this.newUserForm.value.email,
+        roles: this.newUserForm.value.roles
+      }
+      this.usersService.updateUsersMethod(updateData, this.editData.id)
     .subscribe({
       next: () =>{
         this.toastr.success('Usuario actualizado', 'Actualizado con exito');
@@ -131,6 +137,22 @@ export class ModalNewUsersComponent implements OnInit {
         console.log(erro);
       }
     })
+    }else{
+      this.usersService.updateUsersMethod(this.newUserForm.value, this.editData.id)
+      .subscribe({
+      next: () =>{
+        this.toastr.success('Usuario actualizado', 'Actualizado con exito');
+        this.newUserForm.reset();
+        this.dialogRef.close('update');
+      },
+      error: (erro)=>{
+        this.toastr.error('No se pudo actualizar usuario', 'ERROR', {
+          timeOut: 3000,
+        });
+        console.log(erro);
+      }
+    })
+    }
 
   }
 

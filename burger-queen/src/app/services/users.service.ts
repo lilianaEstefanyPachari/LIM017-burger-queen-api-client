@@ -23,6 +23,7 @@ export class UsersService {
         })
     })
 
+
   //obtener la data de usuarios
   getUsersMethod(): Observable<any> {
     return this.http.get<Users[]>(this.url, this.httpOptions());
