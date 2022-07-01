@@ -30,10 +30,12 @@ export class ProductsService {
   }
 
   deleteProductsMethod(id:number){
-    return this.http.delete<any>(this.url+id, this.httpOptions());
+    const deleteUrl = `${this.url}/${id}`;
+    return this.http.delete<any>(deleteUrl, this.httpOptions());
   }
 
   updateProductsMethod(data: any, id: number) {
-    return this.http.put<any>(this.url+id, data, this.httpOptions())
+    const updateUrl = `${this.url}/${id}`;
+    return this.http.patch<any>(updateUrl, data, this.httpOptions())
   }
 }

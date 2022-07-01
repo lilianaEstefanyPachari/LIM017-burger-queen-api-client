@@ -35,7 +35,9 @@ export class UsersService {
 
 // eliminar usuarios
   deleteUsersMethod(users: Users): Observable<Users> {
+
     const deleteUrl = `${this.url}/${users.id}`;
+    console.log(deleteUrl);
     return this.http.delete<Users>(deleteUrl, this.httpOptions());
   }
 
