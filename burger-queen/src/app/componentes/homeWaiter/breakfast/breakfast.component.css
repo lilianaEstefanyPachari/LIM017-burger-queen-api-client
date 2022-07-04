@@ -16,12 +16,26 @@
   margin: 0px auto 15px;
   /* margin: 0 -16px 16px -16px; */
 }
-/*
-.example-card {
-  max-width: 400px;
+
+.addProducts {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 62%;
+  border: 2px solid red;
+  border-radius: 10px;
+}
+
+.addProducts .prueba {
+  margin-left: 4px;
+
+}
+
+/* PARA DESTOK */
+/* .addProducts:hover {
+  background-color: #FFCA40;
 } */
 
-/* .example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
-} */
+.mat-icon {
+  font-size: 25px;
+}
