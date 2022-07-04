@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/models/products';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class BreakfastComponent implements OnInit {
 
-  products: any
+  productsBreakfast: Product[] = [];
 
   constructor(private productsService:ProductsService) { }
 
@@ -19,9 +20,11 @@ export class BreakfastComponent implements OnInit {
   getAllProducts(){
     this.productsService.getProductsMethod()
     .subscribe({
-      next: (res) => {
-        this.products = res
-        console.log(this.products)
+      next: (res: Product[]) => {
+        console.log('productoooooossssssssssssss',res)
+
+        this.productsBreakfast = res.filter(e => e.type === "Desayuno")
+        console.log('unPorductooooooooooo',this.productsBreakfast)
       },
       error: (err) => {
         console.log(err, 'error mientras se hacia la consulta de data');
