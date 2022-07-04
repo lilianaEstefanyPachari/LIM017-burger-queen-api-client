@@ -1,8 +1,27 @@
-.example-card {
-  max-width: 400px;
+.content{
+  padding: 16px;
 }
 
-.example-header-image {
+.mat-card-image:first-child {
+  margin-top: 0px;
+
+}
+
+.mat-card>:first-child {
+  margin-top: 0;
+}
+.mat-card-image {
+  /* width: calc(100% + -10px); */
+  width: 65%;
+  margin: 0px auto 15px;
+  /* margin: 0 -16px 16px -16px; */
+}
+/*
+.example-card {
+  max-width: 400px;
+} */
+
+/* .example-header-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
-}
+} */

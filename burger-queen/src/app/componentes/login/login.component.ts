@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('roles','waiter')
           localStorage.setItem('token',res.accessToken)
 
-          this.router.navigate(['/waiter']);
+          this.router.navigate(['/waiter/breakfast']);
         }
         if(res && res.user.roles.cocina){
           this.toastr.success('Empleado-chef', 'Logueado con exito');

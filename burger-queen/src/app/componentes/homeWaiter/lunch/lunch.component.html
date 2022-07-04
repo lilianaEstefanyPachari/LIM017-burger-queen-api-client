@@ -1,1 +1,25 @@
-<p>lunch works!</p>
+<section class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="25%" fxFlex.xs="90%" fxFlex.sm="33%" *ngFor="let product of productsLunch">
+      <!-- <ng-container *ngIf="product.type === 'Desayuno'"> -->
+        <!-- *ngIf="product.type === 'Desayuno'" -->
+        <mat-card class="example-card">
+          <img mat-card-image src="{{product.image}}" alt="">
+          <mat-card-content>
+            <p>
+              {{product.name}}
+            </p>
+            <p>
+              {{product.price}}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions>
+        </mat-card>
+      <!-- </ng-container> -->
+    </div>
+  </div>
+</section>
+
