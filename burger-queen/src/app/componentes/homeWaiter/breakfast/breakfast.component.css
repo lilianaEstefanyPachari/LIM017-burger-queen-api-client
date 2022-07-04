@@ -21,14 +21,13 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  width: 62%;
+  width: 50%;
   border: 2px solid red;
   border-radius: 10px;
 }
 
-.addProducts .prueba {
-  margin-left: 4px;
-
+.addParagraph {
+  margin: 0 0 0 10px;
 }
 
 /* PARA DESTOK */
