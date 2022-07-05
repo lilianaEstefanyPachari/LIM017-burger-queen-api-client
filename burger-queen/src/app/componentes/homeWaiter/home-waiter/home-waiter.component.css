@@ -46,6 +46,10 @@ nav {
 .fa-solid {
   font-size: 50px;
 }
+.navOptions{
+  display: flex;
+  align-items: center;
+}
 
 .logOut {
   display: flex;
@@ -61,6 +65,10 @@ nav {
   width: 96%;
   margin: auto;
   height: 50%;
+}
+.fa-cart-shopping{
+  margin-right: 35px;
+  color: black;
 }
 
 .waiterOptions {
@@ -130,38 +138,19 @@ nav {
   border-radius: 0 7px 7px 0;
   font-size: 20px;
 }
-/*cambio de color de btn */
-
-
-
-/* .adminAddUsers {
+.cardsOrders{
+  height: 78%;
+  width: 100%;
   display: flex;
-  width: 96%;
-  margin: 0px auto;
-  height: 60px;
-}
-
-.adminAddUsers .optionAddUsers {
-  display: flex;
-  width: 180px;
-  height: 50px;
-  background-color: white;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
-  margin: 0 37px;
+}
+.sideNavContainer {
+  width: 96%;
+  height: 100%;
+}
+mat-drawer{
+  width: 280px;
+  background-color: #FFCA40;
 }
 
-.adminAddUsers .fa-solid{
-  font-size: 30px;
-}
-
-.adminAddUsers p {
-  font-size: 20px;
-  margin-left:5px;
-}
-
-.optionAddUsers {
-  cursor: pointer;
-}
- */

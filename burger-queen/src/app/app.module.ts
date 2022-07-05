@@ -21,6 +21,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 //componentes
 import { LoginComponent } from './componentes/login/login.component';
@@ -76,7 +77,8 @@ import { LunchComponent } from './componentes/homeWaiter/lunch/lunch.component';
     MatSortModule,
     ToastrModule.forRoot(),
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

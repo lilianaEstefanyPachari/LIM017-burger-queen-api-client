@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-waiter.component.css']
 })
 export class HomeWaiterComponent implements OnInit {
+  opened = false;
   renderViewControler:string = "viewOrders";
   constructor() { }
 
