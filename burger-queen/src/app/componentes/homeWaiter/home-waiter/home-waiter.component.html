@@ -6,7 +6,7 @@
         <h4>Mesero</h4>
       </div>
       <div class="navOptions">
-        <i class="fa-solid fa-cart-shopping"  (click)="opened = !opened"></i>
+        <i class="fa-solid fa-cart-shopping"  (click)="SideBareOpend = !SideBareOpend"></i>
         <div class="logOut" routerLink="" (click)="logOut()">
           <img src="assets\img\cerrar-sesion.png">
         </div>
@@ -33,18 +33,16 @@
 
   <section class="cardsOrders">
 
-
-
-    <mat-drawer-container class="sideNavContainer">
-      <!-- <mat-drawer mode="side" opened> -->
-      <mat-drawer [(opened)]="opened" mode="side">
+<!-- PADRE RENDER  -->
+    <mat-drawer-container class="sideNavContainer" [dir]="direction">
+      <mat-drawer fxFlex="350px" fxFlex.xs="260px" fxFlex.sm="250px"  mode="side" [(opened)]="SideBareOpend">
+        <button (click)="SideBareOpend=false"> close [X] </button>
+        <mat-icon>close</mat-icon>
         sideeeee
       </mat-drawer>
 
       <mat-drawer-content>
-        <!-- <button mat-button  (click)="opened = !opened">tooooogle</button> -->
         <router-outlet></router-outlet>
-
       </mat-drawer-content>
     </mat-drawer-container>
 

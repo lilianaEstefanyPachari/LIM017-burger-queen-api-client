@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Direction } from '@angular/cdk/bidi';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Product } from 'src/app/models/products';
 import { ProductsService } from 'src/app/services/products.service';
+import { ShoppCartService } from 'src/app/services/shopp-cart.service';
 
 @Component({
   selector: 'app-breakfast',
@@ -10,8 +12,10 @@ import { ProductsService } from 'src/app/services/products.service';
 export class BreakfastComponent implements OnInit {
 
   productsBreakfast: Product[] = [];
+  directionCard: Direction = "ltr";
+  // @Output() openEvent = new EventEmitter<boolean>()
 
-  constructor(private productsService:ProductsService) { }
+  constructor(private productsService:ProductsService,private shoppCartService:ShoppCartService) { }
 
   ngOnInit(): void {
     this.getAllProducts();
@@ -30,6 +34,11 @@ export class BreakfastComponent implements OnInit {
         console.log(err, 'error mientras se hacia la consulta de data');
       }
     })
+  }
+
+  openSideBareEvent(event: boolean): void{
+    console.log("pasando un true del hijo")
+    this.shoppCartService.openSideBareService(event)
   }
 
 }

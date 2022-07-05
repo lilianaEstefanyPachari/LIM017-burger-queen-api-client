@@ -1,4 +1,6 @@
+import { Direction } from '@angular/cdk/bidi';
 import { Component, OnInit } from '@angular/core';
+import { ShoppCartService } from 'src/app/services/shopp-cart.service';
 
 @Component({
   selector: 'app-home-waiter',
@@ -6,10 +8,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-waiter.component.css']
 })
 export class HomeWaiterComponent implements OnInit {
-  opened = false;
-  renderViewControler:string = "viewOrders";
-  constructor() { }
 
+  renderViewControler:string = "viewOrders";
+
+  SideBareOpend: boolean = false;
+  direction: Direction = "rtl";
+
+  // public SideBareOpend: boolean = true;
+  // direction: Direction = "rtl";
+
+  // changeDir() {
+  //   if (this.direction == "rtl") {
+  //     this.direction = "ltr";
+  //   } else {
+  //     this.direction = "rtl";
+  //   }
+  // }
+
+
+  constructor(private shoppCartService:ShoppCartService) {
+    shoppCartService.changeEmitted$.subscribe(event => {
+      console.log(event, "padre recibio esto del observador");
+      this.SideBareOpend = event
+  });
+  }
   ngOnInit(): void {
   }
 
@@ -25,5 +47,11 @@ export class HomeWaiterComponent implements OnInit {
   logOut(){
     localStorage.clear();
   }
+
+  // openSideBare(): boolean{
+  //   const viewSideBar: boolean = this.shoppCartService.parentOpenSideBare()
+  //   console.log("llegueeeeeeeeeeeeeee al padre")
+  //   return viewSideBar
+  // }
 
 }
