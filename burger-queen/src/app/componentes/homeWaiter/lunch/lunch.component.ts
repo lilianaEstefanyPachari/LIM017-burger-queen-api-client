@@ -1,3 +1,4 @@
+import { Direction } from '@angular/cdk/bidi';
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/products';
 import { ProductsService } from 'src/app/services/products.service';
@@ -10,6 +11,7 @@ import { ProductsService } from 'src/app/services/products.service';
 export class LunchComponent implements OnInit {
 
   productsLunch: Product[] = [];
+  directionCard: Direction = "ltr";
 
   constructor(private productsService:ProductsService) { }
 

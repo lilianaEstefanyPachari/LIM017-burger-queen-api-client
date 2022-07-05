@@ -1,20 +1,8 @@
-<!-- <tbody>
-  <tr *ngFor="let region of regions">
-    <ng-container *ngIf="region.sales > 200">
-      <td>{{region.region}}</td>
-      <td>{{region.regionalManager}}</td>
-      <td>{{region.sales}}</td>
-    </ng-container>
-  </tr>
-</tbody> -->
-
-<section class="content">
+<section class="content" [dir]="directionCard">
   <div fxLayout="row wrap" fxLayoutGap="16px grid">
-    <div fxFlex="25%" fxFlex.xs="90%" fxFlex.sm="33%" *ngFor="let product of productsBreakfast">
-      <!-- <ng-container *ngIf="product.type === 'Desayuno'"> -->
-        <!-- *ngIf="product.type === 'Desayuno'" -->
+    <div fxFlex="25%" fxFlex.xs="80%" fxFlex.sm="33%" *ngFor="let product of productsBreakfast">
         <mat-card class="example-card">
-          <img mat-card-image src="{{product.image}}" alt="">
+          <img mat-card-image src="{{product.image}}" alt="imagen de cada producto">
           <mat-card-content>
             <p>
               {{product.name}}
@@ -23,12 +11,10 @@
               {{product.price}}
             </p>
           </mat-card-content>
-          <div class="addProducts">
+          <div class="addProducts" (click)="openSideBareEvent(true)">
             <p class="addParagraph">AÑADIR</p>
-            <mat-icon class="mat-icon">add_circle</mat-icon>
           </div>
         </mat-card>
-      <!-- </ng-container> -->
     </div>
   </div>
 </section>

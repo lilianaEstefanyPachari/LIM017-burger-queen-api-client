@@ -21,13 +21,15 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  width: 50%;
-  border: 2px solid red;
+  /* width: 50%; */
+  border: 2px solid black;
   border-radius: 10px;
+  height: 2.3em;
 }
 
 .addParagraph {
-  margin: 0 0 0 10px;
+  margin: 0 auto;
+
 }
 
 /* PARA DESTOK */

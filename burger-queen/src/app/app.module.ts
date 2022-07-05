@@ -21,6 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {BidiModule} from '@angular/cdk/bidi';
 
 //componentes
 import { LoginComponent } from './componentes/login/login.component';
@@ -33,10 +35,6 @@ import { ModalNewProductsComponent } from './componentes/homeAdmin/modal-new-pro
 import { HomeWaiterComponent } from './componentes/homeWaiter/home-waiter/home-waiter.component';
 import { BreakfastComponent } from './componentes/homeWaiter/breakfast/breakfast.component';
 import { LunchComponent } from './componentes/homeWaiter/lunch/lunch.component';
-
-
-
-
 
 
 @NgModule({
@@ -76,7 +74,9 @@ import { LunchComponent } from './componentes/homeWaiter/lunch/lunch.component';
     MatSortModule,
     ToastrModule.forRoot(),
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatSidenavModule,
+    BidiModule
   ],
   providers: [],
   bootstrap: [AppComponent]
