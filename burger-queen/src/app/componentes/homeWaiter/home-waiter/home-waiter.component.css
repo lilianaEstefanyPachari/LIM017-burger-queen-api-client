@@ -27,8 +27,8 @@ nav {
   padding: 5px 19px;
   background-color: rgba(249, 244, 244, 0.78);
   width: 96%;
-  height: 40%;
-  margin: 10px auto;
+  height: 33%;
+  margin: 10px auto 0px;
 }
 
 .profile {
@@ -44,7 +44,7 @@ nav {
 }
 
 .fa-solid {
-  font-size: 50px;
+  font-size: 45px;
 }
 .navOptions{
   display: flex;
@@ -58,6 +58,7 @@ nav {
 
 .logOut img {
   width: 45px;
+  margin-left: 17px;
 }
 
 .waiterContainer {
@@ -67,7 +68,7 @@ nav {
   height: 50%;
 }
 .fa-cart-shopping{
-  margin-right: 35px;
+  /* margin-right: 35px; */
   color: black;
 }
 
@@ -154,3 +155,14 @@ mat-drawer{
   background-color: #FFCA40;
 }
 
+
+@media screen and (min-width:800px){
+
+  .fa-solid{
+    font-size: 33px;
+  }
+  .logOut img{
+    width: 34px;
+  }
+
+}
