@@ -10,8 +10,9 @@ export class MainCartService {
 
   constructor() { }
 
-  getProducts(){
-    this.productList.asObservable();
+  getProducts(): Observable<any>{
+    const emittedProductList = this.productList.asObservable();
+    return emittedProductList;
   }
   setProduct(product: any){
     this.cartItemList.push(...product);
@@ -23,11 +24,12 @@ export class MainCartService {
     this.getTotalPrice();
     console.log("SERVICIOOOO añadiendo productos",this.cartItemList)
   }
-  getTotalPrice(){
+  getTotalPrice():number{
     let grandTotal = 0;
     this.cartItemList.map((e:any) => {
       grandTotal+= e.price;
     })
+    return grandTotal;
   }
   removeCartItem(product:any){
     this.cartItemList.map((e:any, index:any) => {

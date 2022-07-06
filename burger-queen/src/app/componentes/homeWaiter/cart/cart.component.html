@@ -1,16 +1,15 @@
 <ng-container *ngIf="true">
 
-  <mat-card class="listOrder" *ngFor="let product of [{nombre:'queso',precio:2},{nombre:'pan',precio:1},{nombre:'leche',precio:5}]">
+  <mat-card class="listOrder" *ngFor="let product of products; let i = index">
     <div>
       <i class="fa-solid fa-xmark"></i>
-      <p class="productName">{{product.nombre}}</p>
+      <p class="productName">{{product.name}}</p>
       <div class="quantity">
         <i class="fa-solid fa-circle-minus"></i>
-        <p>1</p>
+        <p>{{product.quantity}}</p>
         <i class="fa-solid fa-circle-plus"></i>
       </div>
-      <p class="price">{{product.precio | currency}}</p>
-
+      <p class="price">{{product.total | currency}}</p>
     </div>
   </mat-card>
 

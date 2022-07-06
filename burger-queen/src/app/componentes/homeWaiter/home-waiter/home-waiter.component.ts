@@ -1,5 +1,6 @@
 import { Direction } from '@angular/cdk/bidi';
 import { Component, OnInit } from '@angular/core';
+import { MainCartService } from 'src/app/services/main-cart.service';
 import { ShoppCartService } from 'src/app/services/shopp-cart.service';
 
 @Component({
@@ -10,30 +11,25 @@ import { ShoppCartService } from 'src/app/services/shopp-cart.service';
 export class HomeWaiterComponent implements OnInit {
 
   renderViewControler:string = "viewOrders";
-
   SideBareOpend: boolean = false;
   direction: Direction = "rtl";
-  originalDirection: Direction = "ltr"
+  originalDirection: Direction = "ltr";
+  public totalItems : number = 0;
 
-  // public SideBareOpend: boolean = true;
-  // direction: Direction = "rtl";
-
-  // changeDir() {
-  //   if (this.direction == "rtl") {
-  //     this.direction = "ltr";
-  //   } else {
-  //     this.direction = "rtl";
-  //   }
-  // }
-
-
-  constructor(private shoppCartService:ShoppCartService) {
+  constructor(
+    private shoppCartService: ShoppCartService,
+    private mainCartService: MainCartService
+    ) {
     shoppCartService.changeEmitted$.subscribe(event => {
-      console.log(event, "padre recibio esto del observador");
-      this.SideBareOpend = event
+      console.log(event, "el padre recibio esto del observador");
+      this.SideBareOpend = event;
   });
   }
   ngOnInit(): void {
+    this.mainCartService.getProducts()
+    .subscribe(res => {
+      this.totalItems = res.length;
+    })
   }
 
   setStateOfViewListOrders(){
@@ -48,11 +44,5 @@ export class HomeWaiterComponent implements OnInit {
   logOut(){
     localStorage.clear();
   }
-
-  // openSideBare(): boolean{
-  //   const viewSideBar: boolean = this.shoppCartService.parentOpenSideBare()
-  //   console.log("llegueeeeeeeeeeeeeee al padre")
-  //   return viewSideBar
-  // }
 
 }
