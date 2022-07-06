@@ -1,0 +1,100 @@
+.containerCart{
+  height: 100%;
+}
+.cartEmpty{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+}
+.cartEmpty p {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.icon{
+  height: 100px;
+  width: 100px;
+}
+.icon .material-icons{
+  font-size: 50px;
+  height: 80px;
+  width: 80px;
+}
+
+.listOrder div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.listOrder{
+  background-color: rgba(0,0,0,0);
+  padding: 12px 3px 12px 8px;
+  border-radius: 0px;
+}
+.listOrder:hover{
+  background-color: rgb(0 0 0 / 9%);
+}
+.productName{
+  width: 40%;
+}
+.quantity{
+  width: 20%;
+}
+.price{
+  width: 20%;
+}
+.listOrder p{
+  margin: 7px 0 3px;
+  color:rgb(0, 0, 0);
+  font-weight: 500;
+}
+.quantity i,.fa-xmark{
+  cursor: pointer;
+  margin: 9px 0 3px;
+}
+.quantity i{
+  font-size: 17px;
+}
+.fa-xmark{
+  font-size: 18px;
+}
+.fa-xmark, .fa-circle-plus, .fa-circle-minus{
+  color: rgba(59, 58, 58, 0.637);;
+}
+.fa-xmark:hover{
+  color: rgb(165, 7, 7)
+}
+.fa-circle-plus:hover{
+  color: rgb(0, 0, 0);
+}
+.fa-circle-minus:hover{
+  color: rgb(0, 0, 0);
+}
+
+.mat {
+  padding-right: 0;
+  padding-left: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* rgba(0,0,0,.87);
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+      display: block;
+    height: 48px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    width: 100%;
+    padding: 0;
+        cursor: pointer;
+    outline: none;
+        display: block;
+    height: 48px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    width: 100%;
+    padding: 0;
+
+   */
+}

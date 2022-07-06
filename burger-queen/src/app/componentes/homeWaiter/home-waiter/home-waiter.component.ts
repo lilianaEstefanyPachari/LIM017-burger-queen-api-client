@@ -13,6 +13,7 @@ export class HomeWaiterComponent implements OnInit {
 
   SideBareOpend: boolean = false;
   direction: Direction = "rtl";
+  originalDirection: Direction = "ltr"
 
   // public SideBareOpend: boolean = true;
   // direction: Direction = "rtl";

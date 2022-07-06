@@ -2,6 +2,7 @@ import { Direction } from '@angular/cdk/bidi';
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/products';
 import { ProductsService } from 'src/app/services/products.service';
+import { ShoppCartService } from 'src/app/services/shopp-cart.service';
 
 @Component({
   selector: 'app-lunch',
@@ -13,7 +14,7 @@ export class LunchComponent implements OnInit {
   productsLunch: Product[] = [];
   directionCard: Direction = "ltr";
 
-  constructor(private productsService:ProductsService) { }
+  constructor(private productsService:ProductsService, private shoppCartService:ShoppCartService) { }
 
   ngOnInit(): void {
     this.getAllProducts()
@@ -33,6 +34,10 @@ export class LunchComponent implements OnInit {
         console.log(err, 'error mientras se hacia la consulta de data');
       }
     })
+  }
+  openSideBareEvent(event: boolean): void{
+    console.log("pasando un true del hijo")
+    this.shoppCartService.openSideBareService(event)
   }
 
 }

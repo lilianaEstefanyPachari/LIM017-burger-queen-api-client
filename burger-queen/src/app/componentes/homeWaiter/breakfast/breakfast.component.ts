@@ -1,6 +1,7 @@
 import { Direction } from '@angular/cdk/bidi';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Product } from 'src/app/models/products';
+import { MainCartService } from 'src/app/services/main-cart.service';
 import { ProductsService } from 'src/app/services/products.service';
 import { ShoppCartService } from 'src/app/services/shopp-cart.service';
 
@@ -15,7 +16,11 @@ export class BreakfastComponent implements OnInit {
   directionCard: Direction = "ltr";
   // @Output() openEvent = new EventEmitter<boolean>()
 
-  constructor(private productsService:ProductsService,private shoppCartService:ShoppCartService) { }
+  constructor(
+    private productsService:ProductsService,
+    private shoppCartService:ShoppCartService,
+    private addCartService: MainCartService
+    ) { }
 
   ngOnInit(): void {
     this.getAllProducts();
@@ -27,8 +32,11 @@ export class BreakfastComponent implements OnInit {
       next: (res: Product[]) => {
         console.log('productoooooossssssssssssss',res)
 
-        this.productsBreakfast = res.filter(e => e.type === "Desayuno")
-        console.log('unPorductooooooooooo',this.productsBreakfast)
+        this.productsBreakfast = res.filter(e => e.type === "Desayuno");
+        this.productsBreakfast.forEach((product:any) => {
+          Object.assign(product,{quantity:1,total:product.price})
+        })
+        console.log('productos filtradoooooooooAAAAAs',this.productsBreakfast)
       },
       error: (err) => {
         console.log(err, 'error mientras se hacia la consulta de data');
@@ -39,6 +47,12 @@ export class BreakfastComponent implements OnInit {
   openSideBareEvent(event: boolean): void{
     console.log("pasando un true del hijo")
     this.shoppCartService.openSideBareService(event)
+  }
+
+  addToCart(product: object){
+    this.openSideBareEvent(true);
+    console.log("añadiendo al carrito")
+    this.addCartService.addToCart(product);
   }
 
 }

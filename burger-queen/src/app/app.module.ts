@@ -23,6 +23,8 @@ import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {BidiModule} from '@angular/cdk/bidi';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatListModule} from '@angular/material/list';
 
 //componentes
 import { LoginComponent } from './componentes/login/login.component';
@@ -35,6 +37,7 @@ import { ModalNewProductsComponent } from './componentes/homeAdmin/modal-new-pro
 import { HomeWaiterComponent } from './componentes/homeWaiter/home-waiter/home-waiter.component';
 import { BreakfastComponent } from './componentes/homeWaiter/breakfast/breakfast.component';
 import { LunchComponent } from './componentes/homeWaiter/lunch/lunch.component';
+import { CartComponent } from './componentes/homeWaiter/cart/cart.component';
 
 
 @NgModule({
@@ -50,6 +53,7 @@ import { LunchComponent } from './componentes/homeWaiter/lunch/lunch.component';
     HomeWaiterComponent,
     BreakfastComponent,
     LunchComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +80,9 @@ import { LunchComponent } from './componentes/homeWaiter/lunch/lunch.component';
     MatCardModule,
     FlexLayoutModule,
     MatSidenavModule,
-    BidiModule
+    BidiModule,
+    MatBadgeModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

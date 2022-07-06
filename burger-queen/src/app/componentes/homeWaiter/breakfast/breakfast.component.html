@@ -4,16 +4,14 @@
         <mat-card class="example-card">
           <img mat-card-image src="{{product.image}}" alt="imagen de cada producto">
           <mat-card-content>
-            <p>
+            <p class="productName">
               {{product.name}}
             </p>
-            <p>
-              {{product.price}}
+            <p class="productName">
+              {{product.price | currency}}
             </p>
           </mat-card-content>
-          <div class="addProducts" (click)="openSideBareEvent(true)">
-            <p class="addParagraph">AÑADIR</p>
-          </div>
+          <button mat-stroked-button class="addProducts" (click)="addToCart(product)">Añadir</button>
         </mat-card>
     </div>
   </div>

@@ -6,7 +6,18 @@
         <h4>Mesero</h4>
       </div>
       <div class="navOptions">
-        <i class="fa-solid fa-cart-shopping"  (click)="SideBareOpend = !SideBareOpend"></i>
+        <!-- <i class="fa-solid fa-cart-shopping"  (click)="SideBareOpend = !SideBareOpend"></i> -->
+
+        <button mat-button >
+          <i class="fa-solid fa-cart-shopping" matBadge="15" matBadgeColor="warn" (click)="SideBareOpend = !SideBareOpend"></i>
+          <!-- <mat-icon>shopping_cart</mat-icon>
+          <mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon> -->
+          <span class="cdk-visually-hidden">
+            cart shopping icon
+          </span>
+        </button>
+
+
         <div class="logOut" routerLink="" (click)="logOut()">
           <img src="assets\img\cerrar-sesion.png">
         </div>
@@ -35,10 +46,12 @@
 
 <!-- PADRE RENDER  -->
     <mat-drawer-container class="sideNavContainer" [dir]="direction">
-      <mat-drawer fxFlex="350px" fxFlex.xs="260px" fxFlex.sm="250px"  mode="side" [(opened)]="SideBareOpend">
-        <button (click)="SideBareOpend=false"> close [X] </button>
-        <mat-icon>close</mat-icon>
-        sideeeee
+      <mat-drawer fxFlex="350px" fxFlex.xs="260px" fxFlex.sm="250px"  mode="side" [(opened)]="SideBareOpend" [dir]="originalDirection">
+        <button mat-button (click)="SideBareOpend=false">
+          <mat-icon>arrow_forward_ios</mat-icon>
+        </button>
+        Lista de pedidos
+        <app-cart></app-cart>
       </mat-drawer>
 
       <mat-drawer-content>

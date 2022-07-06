@@ -4,7 +4,6 @@
 
 .mat-card-image:first-child {
   margin-top: 0px;
-
 }
 
 .mat-card>:first-child {
@@ -17,26 +16,25 @@
   /* margin: 0 -16px 16px -16px; */
 }
 
-.addProducts {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* width: 50%; */
+.mat-stroked-button {
+  width: 100%;
   border: 2px solid black;
-  border-radius: 10px;
-  height: 2.3em;
+  border-radius: 8px;
 }
 
-.addParagraph {
-  margin: 0 auto;
-
+.mat-button-wrapper, .mat-stroked-button {
+  font-size: 17px;
 }
-
-/* PARA DESTOK */
-/* .addProducts:hover {
-  background-color: #FFCA40;
-} */
-
 .mat-icon {
   font-size: 25px;
+}
+
+.productName{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 26ch;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding-left: 4px;
 }

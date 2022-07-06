@@ -1,0 +1,28 @@
+<ng-container *ngIf="true">
+
+  <mat-card class="listOrder" *ngFor="let product of [{nombre:'queso',precio:2},{nombre:'pan',precio:1},{nombre:'leche',precio:5}]">
+    <div>
+      <i class="fa-solid fa-xmark"></i>
+      <p class="productName">{{product.nombre}}</p>
+      <div class="quantity">
+        <i class="fa-solid fa-circle-minus"></i>
+        <p>1</p>
+        <i class="fa-solid fa-circle-plus"></i>
+      </div>
+      <p class="price">{{product.precio | currency}}</p>
+
+    </div>
+  </mat-card>
+
+</ng-container>
+
+<ng-container *ngIf="false" >
+  <section fxFlexAlign="center" class="containerCart" [dir]="direction">
+    <div class="cartEmpty">
+      <p>Aun no se agregaron productos</p>
+      <div class="icon">
+        <mat-icon > fastfood</mat-icon>
+      </div>
+    </div>
+  </section>
+</ng-container>
