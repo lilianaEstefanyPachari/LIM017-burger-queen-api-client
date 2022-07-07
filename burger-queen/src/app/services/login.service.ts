@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Users } from '../employees';
+import { UsersLogin } from '../models/login';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,9 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  postUsers(data: Users): Observable<any> {
-    return this.http.post<Users>(this.url,data);
+  postUsers(data: UsersLogin): Observable<any> {
+    console.log(data);
+    return this.http.post<UsersLogin>(this.url,data);
   }
   isLoggedIn(){
    return localStorage.getItem('roles')!= null
