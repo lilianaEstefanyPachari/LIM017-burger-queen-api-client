@@ -1,8 +1,10 @@
-<ng-container *ngIf="true">
+<ng-container *ngIf="products.length !=0">
 
   <mat-card class="listOrder" *ngFor="let product of products; let i = index">
     <div>
-      <i class="fa-solid fa-xmark"></i>
+      <div (click)="removeItem(product)">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
       <p class="productName">{{product.name}}</p>
       <div class="quantity">
         <i class="fa-solid fa-circle-minus"></i>
@@ -12,10 +14,11 @@
       <p class="price">{{product.total | currency}}</p>
     </div>
   </mat-card>
-
+  <button (click)="emptyCart()">Limpiar todo</button>
+  <p>El total es: ${{grandTotal}}</p>
 </ng-container>
 
-<ng-container *ngIf="false" >
+<ng-container *ngIf="products.length ===0" >
   <section fxFlexAlign="center" class="containerCart" [dir]="direction">
     <div class="cartEmpty">
       <p>Aun no se agregaron productos</p>

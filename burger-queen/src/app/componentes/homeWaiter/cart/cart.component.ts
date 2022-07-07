@@ -24,4 +24,12 @@ export class CartComponent implements OnInit {
     })
   }
 
+  removeItem(product: any){
+    this.mainCartService.removeCartItem(product)
+  }
+
+  emptyCart(){
+    this.mainCartService.removeAllCart()
+  }
+
 }
