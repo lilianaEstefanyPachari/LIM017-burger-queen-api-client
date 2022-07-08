@@ -52,6 +52,7 @@ export class BreakfastComponent implements OnInit {
   addToCart(product: object){
     this.openSideBareEvent(true);
     console.log("añadiendo al carrito")
+    //console.log("soy el productooooooooo",product)
     this.addCartService.addToCart(product);
   }
 

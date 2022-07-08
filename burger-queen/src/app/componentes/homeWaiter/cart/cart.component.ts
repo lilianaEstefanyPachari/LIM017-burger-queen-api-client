@@ -13,6 +13,7 @@ export class CartComponent implements OnInit {
 
   public products:any = [];
   public grandTotal: number = 0;
+  public subTotal: number = 0;
 
   constructor(private mainCartService: MainCartService) {}
 
@@ -21,6 +22,7 @@ export class CartComponent implements OnInit {
     .subscribe(res=> {
       this.products = res;
       this.grandTotal = this.mainCartService.getTotalPrice();
+
     })
   }
 
@@ -31,5 +33,6 @@ export class CartComponent implements OnInit {
   emptyCart(){
     this.mainCartService.removeAllCart()
   }
+
 
 }
