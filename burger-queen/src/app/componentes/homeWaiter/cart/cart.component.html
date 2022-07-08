@@ -7,9 +7,9 @@
       </div>
       <p class="productName">{{product.name}}</p>
       <div class="quantity">
-        <i class="fa-solid fa-circle-minus"></i>
+        <i class="fa-solid fa-circle-minus" (click)="removeQuantity(product)"></i>
         <p>{{product.quantity}}</p>
-        <i class="fa-solid fa-circle-plus"></i>
+        <i class="fa-solid fa-circle-plus" (click)="addQuantity(product)"></i>
       </div>
       <p class="price">{{product.total | currency}}</p>
     </div>

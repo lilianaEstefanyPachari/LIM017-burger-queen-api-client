@@ -1,5 +1,6 @@
 import { Direction } from '@angular/cdk/bidi';
 import { Component, OnInit } from '@angular/core';
+import { ProductCart } from 'src/app/models/products';
 import { MainCartService } from 'src/app/services/main-cart.service';
 
 @Component({
@@ -22,7 +23,6 @@ export class CartComponent implements OnInit {
     .subscribe(res=> {
       this.products = res;
       this.grandTotal = this.mainCartService.getTotalPrice();
-
     })
   }
 
@@ -34,5 +34,16 @@ export class CartComponent implements OnInit {
     this.mainCartService.removeAllCart()
   }
 
+  addQuantity(product:ProductCart){
+    console.log(product)
+    Object.assign(product,{quantity:product.quantity + 1})
+  }
 
+  removeQuantity(product:ProductCart){
+    console.log(product)
+    if(product.quantity > 1){
+      Object.assign(product,{quantity:product.quantity - 1});
+    }
+     return
+  }
 }
