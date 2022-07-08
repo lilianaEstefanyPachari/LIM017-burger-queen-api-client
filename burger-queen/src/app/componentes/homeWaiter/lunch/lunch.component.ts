@@ -1,6 +1,7 @@
 import { Direction } from '@angular/cdk/bidi';
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/products';
+import { MainCartService } from 'src/app/services/main-cart.service';
 import { ProductsService } from 'src/app/services/products.service';
 import { ShoppCartService } from 'src/app/services/shopp-cart.service';
 
@@ -14,7 +15,9 @@ export class LunchComponent implements OnInit {
   productsLunch: Product[] = [];
   directionCard: Direction = "ltr";
 
-  constructor(private productsService:ProductsService, private shoppCartService:ShoppCartService) { }
+  constructor(private productsService:ProductsService,
+    private shoppCartService:ShoppCartService,
+    private addCartService: MainCartService) { }
 
   ngOnInit(): void {
     this.getAllProducts()
@@ -28,6 +31,9 @@ export class LunchComponent implements OnInit {
         console.log('productoSS ALMUERZO',res)
 
         this.productsLunch = res.filter(e => e.type === "Almuerzo")
+        this.productsLunch.forEach((product:any) => {
+          Object.assign(product,{quantity:1,total:product.price})
+        })
         console.log('ALMUERZOOOOOOOOOOOOOOOO',this.productsLunch)
       },
       error: (err) => {
@@ -38,6 +44,12 @@ export class LunchComponent implements OnInit {
   openSideBareEvent(event: boolean): void{
     console.log("pasando un true del hijo")
     this.shoppCartService.openSideBareService(event)
+  }
+
+  addToCart(product: object){
+    this.openSideBareEvent(true);
+    console.log("añadiendo al carrito")
+    this.addCartService.addToCart(product);
   }
 
 }

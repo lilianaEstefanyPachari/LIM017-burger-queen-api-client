@@ -23,11 +23,6 @@ export class LoginService {
    return localStorage.getItem('roles')!= null
   }
 
-//  haveRoleAccess(pathName:any, abc: any){
-//   console.log(pathName)
-//   console.log(abc)
-//   const userRole: string | null = localStorage.getItem('roles')
-
   haveRoleAccess(pathName:any){
     const userRole = localStorage.getItem('roles')
     if(userRole==='admin' && pathName ==='admin'){
@@ -39,31 +34,4 @@ export class LoginService {
     }
     return false;
     }
-
-
-  // switch(userRole){
-  //   case 'admin': return 'admin'
-  //   break;
-  //   case 'waiter': return 'waiter'
-  //   break;
-  //   case 'chef': return 'chef'
-  //   break;
-  // }
-  // return;
-  // if(userRole==='admin' && pathName !='waiter'){
-  //   // // return true;
-  //   // if(pathName ==='waiter'){
-  //   //   return false
-  //   // }
-  //   return true;
-  // }
-  // else{
-  //   if(pathName ==='waiter'){
-  //     return true;
-  //   }else{
-  //     return false;
-  //   }
-  // }
- //}
-
 }
