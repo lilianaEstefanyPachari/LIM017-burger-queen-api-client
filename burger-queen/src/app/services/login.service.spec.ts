@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { of, throwError } from 'rxjs'
 import { LoginService } from './login.service';
 import { Users } from '../employees';
@@ -8,17 +8,18 @@ import { stringToKeyValue } from '@angular/flex-layout/extended/style/style-tran
 
 describe('LoginService', () => {
   let service: LoginService;
-  let httpClientSpy: { post: jasmine.Spy};
+  let httpTestingController: HttpTestingController
 
   beforeEach(() => {
-    httpClientSpy = jasmine.createSpyObj('HttpClient', ['post']);
-    service = new LoginService(httpClientSpy as any)
+    // httpClientSpy = jasmine.createSpyObj('HttpClient', ['post']);
+    // service = new LoginService(httpClientSpy as any)
     TestBed.configureTestingModule({
       imports: [
         HttpClientTestingModule,
       ],
       providers: []
     });
+    httpTestingController = TestBed.inject(HttpTestingController);
     service = TestBed.inject(LoginService);
   });
 
@@ -27,7 +28,7 @@ describe('LoginService', () => {
   });
 
   //TODO: Debe retornar objeto del usuario
-  it('Debe retornar objeto del usuario (Login correcto)', (done: DoneFn) => {
+  it('Debe retornar objeto del usuario (Login correcto)', () => {
     //TODO: Mock de datos!
     const mockUserCredentials = {
       email: 'anita@systers.xyz',
@@ -38,16 +39,12 @@ describe('LoginService', () => {
       token: "dffffeer44"
     }
 
-    httpClientSpy.post.and.returnValue(of(mockResult));  //TODO: Observable
-
-//TODO: ACTION
-
-    // const {  } = mockUserCredentials
-
     service.postUsers(mockUserCredentials)
-    .subscribe(res => { //TODO:Hacer que de por finalizado la prueba:
-      expect(res).toEqual(mockResult);
-      done();
-    })
+      .subscribe(res => { //TODO:Hacer que de por finalizado la prueba:
+        expect(res).toEqual(mockResult);
+      })
+
+    const req = httpTestingController.expectOne(`http://localhost:8080/login`);
+    req.flush(mockResult);
   });
 });
