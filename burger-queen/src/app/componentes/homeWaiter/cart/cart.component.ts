@@ -13,8 +13,7 @@ export class CartComponent implements OnInit {
   direction: Direction = "ltr";
 
   public products:any = [];
-  public grandTotal: number = 0;
-  public subTotal: number = 0;
+  public granTotal: number = 0;
 
   constructor(private mainCartService: MainCartService) {}
 
@@ -22,7 +21,8 @@ export class CartComponent implements OnInit {
     this.mainCartService.getProducts()
     .subscribe(res=> {
       this.products = res;
-      this.grandTotal = this.mainCartService.getTotalPrice();
+      console.log("arrayyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy",this.products)
+      this.granTotal = this.calcGranTotal(this.products);
     })
   }
 
@@ -37,6 +37,10 @@ export class CartComponent implements OnInit {
   addQuantity(product:ProductCart){
     console.log(product)
     Object.assign(product,{quantity:product.quantity + 1})
+    this.addSubTotal(product)
+    console.log("lista actualizadaaaaaaaaaaaaaaaaaaaaaaaa",this.products)
+    this.granTotal = this.calcGranTotal(this.products)
+
   }
 
   removeQuantity(product:ProductCart){
@@ -44,6 +48,34 @@ export class CartComponent implements OnInit {
     if(product.quantity > 1){
       Object.assign(product,{quantity:product.quantity - 1});
     }
-     return
+    this.removeSubTotal(product)
+    this.granTotal = this.calcGranTotal(this.products)
+    return
   }
+  addSubTotal(product:ProductCart){
+    const result = product.quantity * product.price;
+    Object.assign(product,{total:result});
+    //this.mainCartService.addToCart(product)
+  }
+
+  removeSubTotal(product:ProductCart){
+    if(product.total> product.price){
+      const result = product.total-product.price
+      Object.assign(product,{total:result});
+      //this.mainCartService.addToCart(product)
+    } else {
+      return
+    }
+  }
+
+
+  calcGranTotal(products:ProductCart[]){
+    console.log("products de GRAN TOTALLLLLLLLLL",products)
+    let grandTotal = 0;
+    products.map((e:any) => {
+      grandTotal += e.total;
+    })
+    return grandTotal;
+  }
+
 }
