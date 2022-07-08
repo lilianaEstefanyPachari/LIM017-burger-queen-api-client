@@ -34,7 +34,7 @@ export class LunchComponent implements OnInit {
         this.productsLunch.forEach((product:any) => {
           Object.assign(product,{quantity:1,total:product.price})
         })
-        console.log('ALMUERZOOOOOOOOOOOOOOOO',this.productsLunch)
+        console.log('ALMUERZOOOOOOO',this.productsLunch)
       },
       error: (err) => {
         console.log(err, 'error mientras se hacia la consulta de data');
