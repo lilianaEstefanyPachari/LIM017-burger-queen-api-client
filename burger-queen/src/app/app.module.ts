@@ -25,7 +25,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {BidiModule} from '@angular/cdk/bidi';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatListModule} from '@angular/material/list';
-
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 //componentes
 import { LoginComponent } from './componentes/login/login.component';
@@ -95,7 +95,8 @@ import { OrdersPendingComponent } from './componentes/homeChef/orders-pending/or
     MatSidenavModule,
     BidiModule,
     MatBadgeModule,
-    MatListModule
+    MatListModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
