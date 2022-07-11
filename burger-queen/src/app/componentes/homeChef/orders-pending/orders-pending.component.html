@@ -1,0 +1,29 @@
+<section class="cardsContainer">
+  <section class="content">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+      <div fxFlex="25%" fxFlex.xs="80%" fxFlex.sm="33%" *ngFor="let orderData of ordersPending">
+          <mat-card class="example-card">
+            <p class="title">Orden número: {{orderData.id}}</p>
+            <mat-card-content>
+              <p class="status">Estado: {{orderData.status}}</p>
+              <p class="date">Fecha de pedido: {{orderData.dataEntry}}</p>
+              <p class="date">Fecha de entrega: {{orderData.dateProcessed}}</p>
+              <p class="client">Cliente: {{orderData.client}}</p>
+              <div class="productsList" *ngFor="let productData of orderData.products">
+                <div>
+                  <p class="quantity">{{productData.qty}}</p>
+                  <p>{{productData.product.name}}</p>
+                </div>
+                <p class="price">{{productData.product.price | currency}}</p>
+              </div>
+              <div class="options" *ngIf="(orderData.status === 'pending')">
+                <button mat-stroked-button class="btndelivered">Listo</button>
+              </div>
+
+            </mat-card-content>
+          </mat-card>
+      </div>
+    </div>
+  </section>
+</section>
+

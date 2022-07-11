@@ -26,6 +26,7 @@ import {BidiModule} from '@angular/cdk/bidi';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatListModule} from '@angular/material/list';
 
+
 //componentes
 import { LoginComponent } from './componentes/login/login.component';
 import { HomeComponent } from './componentes/home/home.component';
@@ -38,6 +39,12 @@ import { HomeWaiterComponent } from './componentes/homeWaiter/home-waiter/home-w
 import { BreakfastComponent } from './componentes/homeWaiter/breakfast/breakfast.component';
 import { LunchComponent } from './componentes/homeWaiter/lunch/lunch.component';
 import { CartComponent } from './componentes/homeWaiter/cart/cart.component';
+import { OrdersComponent } from './componentes/homeWaiter/orders/orders.component';
+import { OrdersDeliveredComponent } from './componentes/homeWaiter/orders-delivered/orders-delivered.component';
+import { OrdersDeliveringComponent } from './componentes/homeWaiter/orders-delivering/orders-delivering.component';
+import { OrdersDeliveringChefComponent } from './componentes/homeChef/orders-delivering-chef/orders-delivering-chef.component';
+import { HomeChefComponent } from './componentes/homeChef/home-chef/home-chef.component';
+import { OrdersPendingComponent } from './componentes/homeChef/orders-pending/orders-pending.component';
 
 
 @NgModule({
@@ -54,6 +61,12 @@ import { CartComponent } from './componentes/homeWaiter/cart/cart.component';
     BreakfastComponent,
     LunchComponent,
     CartComponent,
+    OrdersComponent,
+    OrdersPendingComponent,
+    OrdersDeliveredComponent,
+    OrdersDeliveringComponent,
+    OrdersDeliveringChefComponent,
+    HomeChefComponent,
   ],
   imports: [
     BrowserModule,
