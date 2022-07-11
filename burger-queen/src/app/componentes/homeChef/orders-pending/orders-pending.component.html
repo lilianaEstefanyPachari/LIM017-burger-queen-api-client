@@ -6,7 +6,7 @@
             <p class="title">Orden número: {{orderData.id}}</p>
             <mat-card-content>
               <p class="status">Estado: {{orderData.status}}</p>
-              <p class="date">Fecha de pedido: {{orderData.dataEntry}}</p>
+              <p class="date">Fecha de pedido: {{orderData.dataEntry | date: 'dd/MM/yyyy HH:mm'}}</p>
               <p class="date">Fecha de entrega: {{orderData.dateProcessed}}</p>
               <p class="client">Cliente: {{orderData.client}}</p>
               <div class="productsList" *ngFor="let productData of orderData.products">

@@ -21,7 +21,13 @@ export class OrdersService {
         })
     })
 
-    getOrdersMethod(){
-      return this.http.get<any>(this.urlOrders, this.httpOptions());
-    }
+  //obtener ordenes
+  getOrdersMethod(){
+    return this.http.get<any>(this.urlOrders, this.httpOptions());
+  }
+
+  // crear orden
+  postOrderMethod(data: any){
+  return this.http.post<any>(this.urlOrders,data, this.httpOptions())
+  }
 }

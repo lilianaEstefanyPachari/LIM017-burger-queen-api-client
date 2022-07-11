@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
           this.loginForm.reset();
 
           localStorage.setItem('roles','waiter')
+          localStorage.setItem('ID',res.user.id)
           localStorage.setItem('token',res.accessToken)
 
           this.router.navigate(['/waiter/breakfast']);
@@ -51,6 +52,7 @@ export class LoginComponent implements OnInit {
           this.loginForm.reset();
 
           localStorage.setItem('roles','chef')
+          localStorage.setItem('ID',res.user.id)
           localStorage.setItem('token',res.accessToken)
 
           this.router.navigate(['/chef/pending']);
