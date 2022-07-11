@@ -1,10 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { of, throwError } from 'rxjs'
 import { LoginService } from './login.service';
-import { Users } from '../employees';
-import { UsersService } from './users.service';
-import { stringToKeyValue } from '@angular/flex-layout/extended/style/style-transforms';
+import { HttpErrorResponse } from '@angular/common/http';
+// import { stringToKeyValue } from '@angular/flex-layout/extended/style/style-transforms';
 
 describe('LoginService', () => {
   let service: LoginService;
@@ -47,4 +45,29 @@ describe('LoginService', () => {
     const req = httpTestingController.expectOne(`http://localhost:8080/login`);
     req.flush(mockResult);
   });
+
+  it('Deberia retornar un error 400', ()=> {
+    //TODO: mock de datos
+    const invalidCredentials = {
+      email: 'chester@abc.com',
+      password: ''
+    }
+    const mockResult = new HttpErrorResponse({
+      error: "Usuario invalido",
+      status: 400,
+      statusText: 'Not Found'
+    })
+    service.postUsers(invalidCredentials)
+      .subscribe({
+        next: res => {
+
+        },
+        error: error => {
+          expect(error.status).toEqual(400);
+        }
+      })
+      const req = httpTestingController.expectOne(`http://localhost:8080/login`);
+      req.flush(mockResult);
+  });
+
 });

@@ -21,7 +21,6 @@ export class HomeAdminProductsComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private modalNewProduct:MatDialog, private productsService:ProductsService, private toastr: ToastrService){
-
   }
 
   ngOnInit(): void {

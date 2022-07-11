@@ -6,6 +6,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ProductsService {
   private url = 'http://localhost:8080/products';
+  private urlOrders = 'http://localhost:8080/orders';
+
+
 
   constructor(private http: HttpClient) { }
 
@@ -37,5 +40,10 @@ export class ProductsService {
   updateProductsMethod(data: any, id: number) {
     const updateUrl = `${this.url}/${id}`;
     return this.http.patch<any>(updateUrl, data, this.httpOptions())
+  }
+
+
+  getOrdersMethod(){
+    return this.http.get<any>(this.urlOrders, this.httpOptions());
   }
 }

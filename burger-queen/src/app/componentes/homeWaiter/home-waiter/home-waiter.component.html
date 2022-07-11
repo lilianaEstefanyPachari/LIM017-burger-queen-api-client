@@ -17,7 +17,6 @@
           </span>
         </button>
 
-
         <div class="logOut" routerLink="" (click)="logOut()">
           <img src="assets\img\cerrar-sesion.png">
         </div>
@@ -25,24 +24,27 @@
     </nav>
    <section class="waiterContainer">
       <div class="waiterOptions">
-        <div routerLink="breakfast" (click)="setStateOfViewOrders()"
-          [className]="renderViewControler === 'viewOrders' ? 'optionNewOrders' : 'optionOrdersChange'">
+        <div  routerLink="breakfast" (click)="setStateOfViewBreakfast()"
+          [className]="renderViewControler === 'viewBreakfast' ? 'selectBreakfast' : 'unselectedBreakfast'">
           <i class="fa-solid fa-mug-saucer"></i>
           <p>Desayuno</p>
         </div>
-        <!-- <div class="optionListOrders" routerLink="listOrders"  (click)="setStateOfViewListOrders()" [className]="renderViewControler === 'productsTable' ? 'optionListOrdersChange' : 'optionListOrders'">
-        <i class="fa-solid fa-cart-shopping"></i><p>Lista de pedidos</p> -->
-        <div routerLink="lunch" (click)="setStateOfViewListOrders()"
-          [className]="renderViewControler === 'viewListOrders' ? 'optionListOrdersChange' : 'optionListOrders'">
+        <div  routerLink="lunch" (click)="setStateOfViewLunch()"
+          [className]="renderViewControler === 'viewLunch' ? 'selectLunch' : 'unselectedLunch'">
           <i class="fa-solid fa-burger"></i>
           <p>Almuerzo</p>
         </div>
+        <div routerLink="orders" (click)="setStateOfViewOrders()"
+        [className]="renderViewControler === 'viewOrders' ? 'selectOrders' : 'unselectedOrders'">
+        <i class="fa-solid fa-list-check"></i>
+        <p>Ordenes</p>
+      </div>
       </div>
 
     </section>
   </section>
 
-  <section class="cardsOrders">
+  <section class="cardsOrders" [dir]="originalDirection">
 
 <!-- PADRE RENDER  -->
     <mat-drawer-container class="sideNavContainer" [dir]="direction">

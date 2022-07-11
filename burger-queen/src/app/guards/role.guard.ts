@@ -33,7 +33,7 @@ export class RoleGuard implements CanActivate {
       this.toastr.error('No tienes acceso, inicia sesion con una cuenta autorizada', 'ERROR', {
         timeOut: 3000,
       });
-      this.route.navigate(['']);
+      this.route.navigate(['chef/pending']);
       return false;
     }
     else{

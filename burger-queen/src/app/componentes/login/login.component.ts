@@ -53,40 +53,14 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('roles','chef')
           localStorage.setItem('token',res.accessToken)
 
-          // this.router.navigate(['']);
+          this.router.navigate(['/chef/pending']);
         }
         else if(res.status === 400){
           this.toastr.error('Usuario o contraseña incorrectas', 'ERROR', {
             timeOut: 3000,
           });
-          // alert('usuario no encontrado');
         }
-        // const users = res.find((e:Users)=>{
-        //   return e.email === this.loginForm.value.email && e.password === this.loginForm.value.password
-        // });
-        // if(users && users.roles.admin){
-        //   this.toastr.success('Administrador', 'Logueado con exito');
-        //   this.loginForm.reset();
-        //   // this.router.navigate(['/admin/users']);
-        //   localStorage.setItem('roles','admin')
-        //   localStorage.setItem('userEmail',users.email)
-        //   this.router.navigate(['/admin/users']);
-        // }
-        // else if(users && users.roles.admin === false){
-        //   this.toastr.success('Empleado', 'Logueado con exito');
-        //   this.loginForm.reset();
 
-        //   localStorage.setItem('roles','employ')
-        //   localStorage.setItem('userEmail',users.email)
-
-        //   this.router.navigate(['/waiter']);
-        // }
-        // else{
-        //   this.toastr.error('Usuario o contraseña incorrectas', 'ERROR', {
-        //     timeOut: 3000,
-        //   });
-        //   // alert('usuario no encontrado');
-        // }
       },error: (res) => {
         console.log(res)
         this.toastr.error('Usuario o contraseña incorrectas', 'ERROR', {
