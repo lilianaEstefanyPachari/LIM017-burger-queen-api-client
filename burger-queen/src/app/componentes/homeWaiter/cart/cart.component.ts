@@ -98,7 +98,7 @@ export class CartComponent implements OnInit {
  //crear orden
  addOrder(){
 
-  let date = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(),new Date().getHours());
+  let date = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(),new Date().getHours(),new Date().getMinutes());
   let orderData:any = [];
 
   this.products.forEach((e:any) => {

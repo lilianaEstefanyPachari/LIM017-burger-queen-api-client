@@ -33,7 +33,7 @@ export class OrdersPendingComponent implements OnInit {
   }
 
   updateOrdersStatus(id: number){
-    let date = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(),new Date().getHours());
+    let date = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(),new Date().getHours(),new Date().getMinutes());
     const updateData = {
       status: 'delivering',
       dateProcessed: date
