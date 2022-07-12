@@ -24,7 +24,7 @@ export class OrdersPendingComponent implements OnInit {
       next: (res) => {
         const filterOfStatusPending = res.filter((e:any) => e.status === "pending");
         this.ordersPending = filterOfStatusPending;
-        console.log(res)
+        console.log("pending",filterOfStatusPending)
       },
       error: (err) => {
         console.log(err, 'error mientras se hacia la consulta de data de orders');

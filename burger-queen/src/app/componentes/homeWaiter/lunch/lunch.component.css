@@ -35,3 +35,16 @@
   font-weight: 500;
   padding-left: 4px;
 }
+
+@media screen and (max-width:420px){
+
+.mat-card button{
+    padding: 2px;
+}
+.content{
+  padding: 4px;
+}
+ .content div{
+  justify-content: center;
+ }
+}
