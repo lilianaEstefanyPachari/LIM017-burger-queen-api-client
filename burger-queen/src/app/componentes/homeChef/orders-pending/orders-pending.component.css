@@ -1,13 +1,14 @@
 .cardsContainer{
   height: 100%;
   width: 96%;
-  margin: 0 auto;
+  margin: 5px auto;
   background: rgba(249, 244, 244, 0.78);
 }
 
 
 .content{
   padding: 16px;
+  height: 100%;
 }
 
 .mat-card>:first-child {
@@ -69,6 +70,8 @@ mat-card-content{
 }
 
 
+
+
 @media screen and (max-width:850px){
   .options{
     flex-direction: column;
@@ -80,3 +83,4 @@ mat-card-content{
     width: 80%;
   }
 }
+

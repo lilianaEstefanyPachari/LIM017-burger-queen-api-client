@@ -24,7 +24,7 @@ export class OrdersPendingComponent implements OnInit {
       next: (res) => {
         const filterOfStatusPending = res.filter((e:any) => e.status === "pending");
         this.ordersPending = filterOfStatusPending;
-        console.log(res)
+        console.log("pending",filterOfStatusPending)
       },
       error: (err) => {
         console.log(err, 'error mientras se hacia la consulta de data de orders');
@@ -33,7 +33,7 @@ export class OrdersPendingComponent implements OnInit {
   }
 
   updateOrdersStatus(id: number){
-    let date = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(),new Date().getHours());
+    let date = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(),new Date().getHours(),new Date().getMinutes());
     const updateData = {
       status: 'delivering',
       dateProcessed: date

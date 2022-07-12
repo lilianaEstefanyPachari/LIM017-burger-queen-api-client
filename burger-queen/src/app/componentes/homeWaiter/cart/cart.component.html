@@ -1,6 +1,6 @@
 <ng-container *ngIf="products.length !=0">
 
-  <form [formGroup]="orderForm">
+  <form [formGroup]="orderForm" class="formClientName">
     <input formControlName="name" type="text" placeholder="Ingrese nombre de cliente" [(ngModel)]="clientName">
   </form>
   <mat-card class="listOrder" *ngFor="let product of products; let i = index">
@@ -17,9 +17,13 @@
       <p class="price">{{product.total | currency}}</p>
     </div>
   </mat-card>
-  <button (click)="emptyCart()">Limpiar todo</button>
-  <p>El total es: ${{granTotal}}</p>
-  <button (click)="addOrder()">Enviar Pedido</button>
+  <div class="granTotal">
+    <p>El total es: {{granTotal | currency}}</p>
+  </div>
+  <div class="cartOptions">
+    <button mat-stroked-button class="cleanCart" (click)="emptyCart()">Cancelar</button>
+    <button mat-stroked-button class="order" (click)="addOrder()">Enviar Pedido</button>
+  </div>
 
 </ng-container>
 

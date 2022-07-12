@@ -5,13 +5,13 @@
 
 .homeContainer {
     width: 100%;
+    height: 100%;
     background-image: url("../../../../assets/img/fondoHamburguesa.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .homeChef {
-  height: 10em;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -23,10 +23,10 @@
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 5px 19px;
+  padding: 8px 19px;
   background-color: rgba(249, 244, 244, 0.78);
   width: 96%;
-  height: 4em;
+  height: 60px;
   margin: 5px auto 5px;
 }
 
@@ -64,7 +64,7 @@ nav {
   background-color: rgba(249, 244, 244, 0.78);
   width: 96%;
   margin: auto;
-  height: 50%;
+  height: 70px;
 }
 
 .chefOptions {
@@ -115,8 +115,14 @@ nav {
   border-radius: 0 7px 7px 0;
 }
 .containerHomeChefBody{
-  height: 76%;
+  /* height: 78%; */
   margin-top: 5px;
+  /* background: rgba(249, 244, 244, 0.78); */
+  background-image: url("../../../../assets/img/fondoHamburguesa.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  width: 100%;
 }
 
 
@@ -131,3 +137,9 @@ nav {
   }
 
 }
+
+
+
+
+
+
