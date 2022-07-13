@@ -8,9 +8,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
-import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
-import {MatRadioModule} from '@angular/material/radio';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -25,7 +23,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {BidiModule} from '@angular/cdk/bidi';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatListModule} from '@angular/material/list';
-import {ScrollingModule} from '@angular/cdk/scrolling';
+
 
 //componentes
 import { LoginComponent } from './componentes/login/login.component';
@@ -78,9 +76,7 @@ import { OrdersPendingComponent } from './componentes/homeChef/orders-pending/or
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatDatepickerModule,
     MatNativeDateModule,
-    MatRadioModule,
     ReactiveFormsModule,
     MatButtonModule,
     FormsModule,
@@ -95,8 +91,7 @@ import { OrdersPendingComponent } from './componentes/homeChef/orders-pending/or
     MatSidenavModule,
     BidiModule,
     MatBadgeModule,
-    MatListModule,
-    ScrollingModule
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

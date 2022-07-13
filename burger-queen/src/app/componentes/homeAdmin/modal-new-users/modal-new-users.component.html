@@ -1,12 +1,6 @@
 <h1 mat-dialog-title>{{actionTitle}}</h1>
 <div mat-dialog-content>
   <form [formGroup]="newUserForm">
-
-    <!-- <mat-form-field appearance="outline">
-        <mat-label>ID</mat-label>
-        <input formControlName="id" matInput type="number" placeholder="id">
-      </mat-form-field> -->
-
     <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
         <input formControlName="email" matInput placeholder="Email">
@@ -21,7 +15,7 @@
       <mat-label>Rol</mat-label>
       <mat-select  formControlName="roles" placeholder="Rol">
         <mat-option value="Administrador">Administrador</mat-option>
-        <mat-option value="Mesera">Mesera</mat-option>
+        <mat-option value="Mesero">Mesero</mat-option>
         <mat-option value="Chef">Chef</mat-option>
       </mat-select>
     </mat-form-field>

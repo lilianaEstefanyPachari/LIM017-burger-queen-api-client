@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { OrdersService } from 'src/app/services/orders.service';
 
 @Component({
@@ -8,7 +8,6 @@ import { OrdersService } from 'src/app/services/orders.service';
 })
 export class OrdersDeliveringChefComponent implements OnInit {
   ordersDelivering: any[] = [];
-  // calcTime:any;
 
   constructor(private ordersService:OrdersService) { }
 
@@ -22,11 +21,6 @@ export class OrdersDeliveringChefComponent implements OnInit {
       next: (res) => {
         const filterOfStatusDelivering = res.filter((e:any) => e.status === "delivering");
         this.ordersDelivering = filterOfStatusDelivering;
-
-        // const calc = filterOfStatusDelivering.forEach((element:any) => {
-
-        // });
-
         console.log("delivering",filterOfStatusDelivering)
       },
       error: (err) => {
@@ -35,23 +29,28 @@ export class OrdersDeliveringChefComponent implements OnInit {
     })
   }
 
-//   calcTime(a:any,b:any){
-// //     dataEntry: "2022-07-12T15:32:00.000Z"
-// // dateProcessed: "2022-07-12T15:34:00.000Z"
+  calcTime(a:string,b:string){
+    const date1 = new Date(a);
+    const date2 = new Date(b);
+    const msBetweenDates = date2.getTime() - date1.getTime();
+    const displayDate = this.convertMsToTime(Math.abs(msBetweenDates));
+    return displayDate
+  }
 
-// //var diff = Math.abs(new Date('2011/10/09 12:00') - new Date('2011/10/09 00:00'));
-//     const firstDate: string | Date = new Date(a.slice(0,10) +" " + a.slice(11,16))
-//     console.log("sdiuvfbvffbd",firstDate)
-//     const secondtDate = new Date(b.slice(0,10) +" " + b.slice(11,16))
-//     // console.log("aaaaaaaaaaaaaaaaaaaaaaaa",Math.abs(parseInt(firstDate) - parseInt(secondtDate)))
+  padTo2Digits(num: number) {
+    return num.toString().padStart(2, '0');
+  }
 
-//     var diff = Math.abs(parseInt(firstDate) - parseInt(secondtDate));
-//     var minutes = Math.floor((diff/1000)/60);
-//     console.log(minutes)
-//     return minutes
-//   }
+  convertMsToTime(milliseconds: number) {
+    let seconds = Math.floor(milliseconds / 1000);
+    let minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
 
+    seconds = seconds % 60;
+    minutes = minutes % 60;
 
+    return `${this.padTo2Digits(hours)}:${this.padTo2Digits(minutes)}:${this.padTo2Digits(seconds)}`;
+  }
 }
 
 
