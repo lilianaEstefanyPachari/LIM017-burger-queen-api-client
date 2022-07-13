@@ -5,8 +5,6 @@ export interface Product {
   name: string;
   price: number;
   type: string;
-  quantity?:number;
-  total?: number
 }
 
 export interface ProductCart {

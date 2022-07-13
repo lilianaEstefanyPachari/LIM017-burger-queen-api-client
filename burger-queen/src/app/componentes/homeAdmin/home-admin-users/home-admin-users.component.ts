@@ -1,9 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
-import { Users } from 'src/app/employees';
+import { Users } from 'src/app/models/employees';
 import { UsersService } from 'src/app/services/users.service';
 import { ModalNewUsersComponent } from '../modal-new-users/modal-new-users.component';
+
+//interface para header de tabla user
+export interface ProductsData {
+  name: string;
+  price: string;
+  image: string;
+  type: string;
+  action: string
+}
 
 @Component({
   selector: 'app-home-admin-users',
@@ -43,8 +52,7 @@ export class HomeAdminUsersComponent implements OnInit {
     })
   }
 
-
-  editUsers(row: any){
+  editUsers(row: Users){
     this.modalNewUser.open(ModalNewUsersComponent, {
       minWidth: "450px",
       width:"30%",

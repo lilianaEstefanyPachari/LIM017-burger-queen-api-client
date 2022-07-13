@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { stringToKeyValue } from '@angular/flex-layout/extended/style/style-transforms';
 import { Observable } from 'rxjs';
-import { Users } from '../employees';
+import { Users } from '../models/employees';
 import { UsersLogin } from '../models/login';
 
 @Injectable({

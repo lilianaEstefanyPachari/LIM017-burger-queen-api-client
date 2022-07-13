@@ -6,6 +6,16 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { ToastrService } from 'ngx-toastr';
+import { Product } from 'src/app/models/products';
+
+//interface para header de tabla productos
+export interface ProductsData {
+  name: string;
+  price: string;
+  image: string;
+  type: string;
+  action: string
+}
 
 @Component({
   selector: 'app-home-admin-products',
@@ -15,7 +25,7 @@ import { ToastrService } from 'ngx-toastr';
 export class HomeAdminProductsComponent implements OnInit {
 
   displayedColumns: string[] = ['name', 'price', 'image','type','action'];
-  dataSource!: MatTableDataSource<any>;
+  dataSource!: MatTableDataSource<ProductsData>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -28,7 +38,7 @@ export class HomeAdminProductsComponent implements OnInit {
   }
 
 
-  openDialog() {
+  openDialog(): void {
     this.modalNewProduct.open(ModalNewProductsComponent, {
       minWidth: "450px",
       width:"30%"
@@ -48,7 +58,9 @@ export class HomeAdminProductsComponent implements OnInit {
         this.dataSource.sort = this.sort
       },
       error: (err) => {
-        console.log(err, 'error mientras se hacia la consulta de data');
+        this.toastr.error('Error mientras se hacia la consulta de data', 'ERROR', {
+          timeOut: 3000,
+        });
       }
     })
   }
@@ -62,7 +74,8 @@ export class HomeAdminProductsComponent implements OnInit {
     }
   }
 
-  editProduct(row: any){
+
+  editProduct(row: Product){
     this.modalNewProduct.open(ModalNewProductsComponent,{
       minWidth: "450px",
       width:"30%",
