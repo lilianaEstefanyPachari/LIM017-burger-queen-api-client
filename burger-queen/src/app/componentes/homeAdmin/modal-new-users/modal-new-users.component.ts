@@ -12,7 +12,6 @@ export class ModalNewUsersComponent implements OnInit {
   newUserForm !: FormGroup;
   actionBtn: string = 'Guardar'
   actionTitle: string = 'Formulario para añadir usuarios'
-  // roles:any
 
   constructor(private formBuilder: FormBuilder,
     private usersService: UsersService,
@@ -22,50 +21,20 @@ export class ModalNewUsersComponent implements OnInit {
 
   ngOnInit(): void {
     this.newUserForm = this.formBuilder.group({
-      // id: ["",Validators.required],
       email: ["",Validators.required],
       password: [""],
       roles: ["",Validators.required],
     })
 
     if(this.editData){
-    // let dataObj: any = this.editData.roles
-    // // let roles:string = dataObj.roles
-    // if(dataObj===true){
-    //   console.log("soy administrador")
-    //   this.roles= "administrador",
-    //   this.newUserForm.controls['id'].setValue(this.editData.id);
-    //   this.newUserForm.controls['email'].setValue(this.editData.email);
-    //   this.newUserForm.controls['password'].setValue(this.editData.password);
-    //   this.newUserForm.controls['roles'].setValue(this.roles);
-    // } else {
-    //   console.log("soy empleado")
-    //   this.roles= 'empleado';
-    //   this.newUserForm.controls['id'].setValue(this.editData.id);
-    //   this.newUserForm.controls['email'].setValue(this.editData.email);
-    //   this.newUserForm.controls['password'].setValue(this.editData.password);
-    //   this.newUserForm.controls['roles'].setValue(this.roles);
 
-    // }
       this.actionTitle = 'Formulario para actualizar usuarios'
       this.actionBtn = 'Actualizar'
-      // this.newUserForm.controls['id'].setValue(this.editData.id);
       this.newUserForm.controls['email'].setValue(this.editData.email);
-      // this.newUserForm.controls['password'].setValue(this.editData.password);
       this.newUserForm.controls['roles'].setValue(this.editData.roles);
     }
     console.log(this.editData);
   }
-
-  // prueba(){
-  //   const dataObj: any = this.newUserForm.value
-  //   const roles:boolean = dataObj.roles
-  //   if(roles===true){
-  //     dataObj.roles = 'administrador'
-  //   } else {
-  //     dataObj.roles = 'empleado'
-  //   }
-  // }
 
   addUser(){
     if(!this.editData){
@@ -94,14 +63,13 @@ export class ModalNewUsersComponent implements OnInit {
   convertRoletoObject(){
     const dataObj: any = this.newUserForm.value
         const roles:string = dataObj.roles
-        // console.log(roles)
         if(roles==="Administrador"){
           dataObj.roles = {
             admin: true,
             mesero: false,
             cocina: false
           }
-        } else if(roles==="Mesera") {
+        } else if(roles==="Mesero") {
           dataObj.roles = {
             mesero: true,
             admin: false,

@@ -1,24 +1,3 @@
-<!-- <section class="homeAdmin">
-  <nav>
-    <div class="profile">
-      <i class="fa-solid fa-circle-user"></i>
-      <h4>Maria Santos</h4>
-    </div>
-    <div class="logOut">
-      <img src="assets\img\cerrar-sesion.png">
-    </div>
-  </nav>
-  <section class="adminContainer">
-    <div class="adminOptions">
-      <div class="optionEmployees">
-        <i class="fa-regular fa-user"></i><p>Empleados222</p>
-      </div>
-      <div class="optionProducts">
-        <i class="fa-solid fa-cart-shopping" routerLink="/admin/products"></i><p>Productos</p>
-      </div>
-    </div> -->
-
-
   <section class="crudUsersContainer">
     <div class="adminAddUsers">
       <div class="optionAddUsers" (click)="openDialog()">
@@ -38,9 +17,9 @@
         <tr *ngFor="let employ of users">
           <th scope="row">{{employ.id}}</th>
           <td>{{employ.email}}</td>
-          <td *ngIf="employ.roles.admin===true && employ.roles.mesero===false && employ.roles.cocina===false">{{msj}}</td>
-          <td *ngIf="employ.roles.admin===false && employ.roles.mesero===true && employ.roles.cocina===false">{{msj2}}</td>
-          <td *ngIf="employ.roles.admin===false && employ.roles.mesero===false && employ.roles.cocina===true">{{msj3}}</td>
+          <td *ngIf="employ.roles.admin===true && employ.roles.mesero===false && employ.roles.cocina===false">{{rolAdmin}}</td>
+          <td *ngIf="employ.roles.admin===false && employ.roles.mesero===true && employ.roles.cocina===false">{{rolMesero}}</td>
+          <td *ngIf="employ.roles.admin===false && employ.roles.mesero===false && employ.roles.cocina===true">{{rolChef}}</td>
           <td class="actionButtons">
             <i class="iconUpdate fa-solid fa-pen" (click)="editUsers(employ)"></i>
             <i class="iconDelete fa-solid fa-trash" (click)="deleteUsers(employ)"></i>

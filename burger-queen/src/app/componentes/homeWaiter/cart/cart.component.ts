@@ -68,14 +68,12 @@ export class CartComponent implements OnInit {
   addSubTotal(product:ProductCart){
     const result = product.quantity * product.price;
     Object.assign(product,{total:result});
-    //this.mainCartService.addToCart(product)
   }
 
   removeSubTotal(product:ProductCart){
     if(product.total> product.price){
       const result = product.total-product.price
       Object.assign(product,{total:result});
-      //this.mainCartService.addToCart(product)
     } else {
       return
     }
@@ -91,13 +89,8 @@ export class CartComponent implements OnInit {
     return grandTotal;
   }
 
-
-
-
-
  //crear orden
  addOrder(){
-
   let date = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate(),new Date().getHours(),new Date().getMinutes());
   let orderData:any = [];
 
@@ -115,7 +108,7 @@ export class CartComponent implements OnInit {
     }
    orderData.push(obj)
 
- } )
+ })
 
 
   const newOrder = {
@@ -147,7 +140,5 @@ export class CartComponent implements OnInit {
 
 
 }
-
-
 
 }
