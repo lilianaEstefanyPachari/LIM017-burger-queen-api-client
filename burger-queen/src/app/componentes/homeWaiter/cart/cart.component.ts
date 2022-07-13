@@ -44,7 +44,8 @@ export class CartComponent implements OnInit {
   }
 
   emptyCart(){
-    this.mainCartService.removeAllCart()
+    this.mainCartService.removeAllCart();
+    this.orderForm.reset();
   }
 
   addQuantity(product:ProductCart){
