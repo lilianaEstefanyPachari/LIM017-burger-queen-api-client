@@ -13,9 +13,15 @@
     <div class="adminOptions">
       <div class="optionEmployees" routerLink="users"  (click)="setStateOfViewUsers()" [className]="renderTableControler === 'userTable' ? 'optionEmployees' : 'optionEmployeesChange'">
         <i class="fa-regular fa-user"></i><p>Empleados</p>
+        <span class="cdk-visually-hidden">
+          botón para ver tabla de usuarios
+        </span>
       </div>
       <div class="optionProducts" routerLink="products"  (click)="setStateOfViewProducts()" [className]="renderTableControler === 'productsTable' ? 'optionProductsChange' : 'optionProducts'">
         <i class="fa-solid fa-cart-shopping"></i><p>Productos</p>
+        <span class="cdk-visually-hidden">
+          botón para ver tabla de productos
+        </span>
       </div>
     </div>
 

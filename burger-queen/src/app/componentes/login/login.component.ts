@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Users } from 'src/app/employees';
 import { ToastrService } from 'ngx-toastr';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -27,12 +26,9 @@ export class LoginComponent implements OnInit {
     this.loginService.postUsers(this.loginForm.value)
     .subscribe({
       next: (res) =>{
-        console.log(res)
-
         if(res && res.user.roles.admin){
           this.toastr.success('Administrador', 'Logueado con exito');
           this.loginForm.reset();
-          // this.router.navigate(['/admin/users']);
           localStorage.setItem('roles','admin')
           localStorage.setItem('token',res.accessToken)
           this.router.navigate(['/admin/users']);

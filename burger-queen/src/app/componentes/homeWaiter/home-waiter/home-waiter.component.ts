@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { MainCartService } from 'src/app/services/main-cart.service';
 import { ShoppCartService } from 'src/app/services/shopp-cart.service';
 
-
 @Component({
   selector: 'app-home-waiter',
   templateUrl: './home-waiter.component.html',
@@ -20,16 +19,19 @@ export class HomeWaiterComponent implements OnInit {
     private shoppCartService: ShoppCartService,
     private mainCartService: MainCartService
     ) {
-    shoppCartService.changeEmitted$.subscribe(event => {
-      console.log(event, "el padre recibio esto del observador");
-      this.SideBareOpend = event;
-    });
-  }
+      shoppCartService.changeEmitted.subscribe(
+        {
+          next: (event) => this.SideBareOpend = event,
+        }
+      );
+   }
+
   ngOnInit(): void {
     this.mainCartService.getProducts()
-    .subscribe(res => {
-      this.totalItems = res.length;
-    })
+    .subscribe({
+      next: (res) => this.totalItems = res.length,
+    }
+    )
   }
 
   setStateOfViewLunch(){
