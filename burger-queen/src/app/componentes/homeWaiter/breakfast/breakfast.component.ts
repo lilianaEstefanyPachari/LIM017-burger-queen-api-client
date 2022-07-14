@@ -27,7 +27,7 @@ export class BreakfastComponent implements OnInit {
     this.getAllProducts();
   }
 
-  getAllProducts(){
+  getAllProducts(): void{
     this.productsService.getProductsMethod()
     .subscribe({
       next: (res: Product[]) => {
@@ -49,7 +49,7 @@ export class BreakfastComponent implements OnInit {
     this.shoppCartService.openSideBareService(event)
   }
 
-  addToCart(product: object){
+  addToCart(product: object): void{
     this.openSideBareEvent(true);
     this.addCartService.addToCart(product);
   }

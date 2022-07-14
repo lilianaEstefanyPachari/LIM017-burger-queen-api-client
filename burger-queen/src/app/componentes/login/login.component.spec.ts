@@ -6,11 +6,18 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 
 import { LoginComponent } from './login.component';
+import { Router } from '@angular/router';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
   let httpTestingController: HttpTestingController
+
+  let mockRouter = {
+    navigate: jasmine.createSpy('navigate').and.callFake(() => {
+      console.log("EJECUTO este SPY")
+    })
+  }
 
 
   beforeEach(async () => {
@@ -23,7 +30,8 @@ describe('LoginComponent', () => {
         HttpClientTestingModule,
         ToastrModule.forRoot(),
       ],
-      providers: [ ToastrService ],
+      providers: [ ToastrService, { provide: Router, useValue: mockRouter }
+      ],
     })
     .compileComponents();
 
@@ -33,6 +41,12 @@ describe('LoginComponent', () => {
   });
 
   it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+  it('should create', () => {
+    const email = component.loginForm.controls['email']
+    const password = component.loginForm.controls['password']
+    email.setValue('')
     expect(component).toBeTruthy();
   });
 
