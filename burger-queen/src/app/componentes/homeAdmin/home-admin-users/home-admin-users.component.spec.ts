@@ -36,8 +36,6 @@ describe('HomeAdminUsersComponent', () => {
     })
     .compileComponents();
 
-
-
     usersServiceMock.getUsersMethod.and.returnValue(of(
       [
         {
