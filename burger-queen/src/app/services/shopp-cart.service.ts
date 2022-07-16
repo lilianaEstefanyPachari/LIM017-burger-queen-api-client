@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 
 
 @Injectable({
@@ -8,15 +8,13 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 export class ShoppCartService {
 
   constructor() { }
-
-      // Observable string sources
-      private emitChangeSource = new Subject<any>();
-      // Observable string streams
-      changeEmitted$ = this.emitChangeSource.asObservable();
-      // Service message commands
+    //Servicio para manejar evento de abrir o cerrar carrito
+      // Crear Observable
+      private emitChangeSource = new Subject<boolean>();
+      changeEmitted = this.emitChangeSource.asObservable();
+      // Método para enviar evento (true o false)
       openSideBareService(event: boolean){
        this.emitChangeSource.next(event);
-       console.log(event,"observador service recibio esto de hijo")
       }
 
 }

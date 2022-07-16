@@ -9,8 +9,7 @@ import { ShoppCartService } from 'src/app/services/shopp-cart.service';
   styleUrls: ['./home-waiter.component.css']
 })
 export class HomeWaiterComponent implements OnInit {
-
-  renderViewControler:string = "viewOrders";
+  renderViewControler:string = "viewBreakfast";
   SideBareOpend: boolean = false;
   direction: Direction = "rtl";
   originalDirection: Direction = "ltr";
@@ -20,24 +19,29 @@ export class HomeWaiterComponent implements OnInit {
     private shoppCartService: ShoppCartService,
     private mainCartService: MainCartService
     ) {
-    shoppCartService.changeEmitted$.subscribe(event => {
-      console.log(event, "el padre recibio esto del observador");
-      this.SideBareOpend = event;
-  });
-  }
+      shoppCartService.changeEmitted.subscribe(
+        {
+          next: (event) => this.SideBareOpend = event,
+        }
+      );
+   }
+
   ngOnInit(): void {
     this.mainCartService.getProducts()
-    .subscribe(res => {
-      this.totalItems = res.length;
-    })
+    .subscribe({
+      next: (res) => this.totalItems = res.length,
+    }
+    )
   }
 
-  setStateOfViewListOrders(){
-    console.log("cambie el estado a listOrders")
-    this.renderViewControler = "viewListOrders"
+  setStateOfViewLunch(){
+    this.renderViewControler = "viewLunch"
+  }
+  setStateOfViewBreakfast(){
+    this.renderViewControler = "viewBreakfast"
   }
   setStateOfViewOrders(){
-    console.log("cambie el estado a viewOrders")
+    this. SideBareOpend = false;
     this.renderViewControler = "viewOrders"
   }
 

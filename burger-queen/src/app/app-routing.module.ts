@@ -10,6 +10,10 @@ import { PermissionGuard } from './guards/permission.guard';
 import { RoleGuard } from './guards/role.guard';
 import { BreakfastComponent } from './componentes/homeWaiter/breakfast/breakfast.component';
 import { LunchComponent } from './componentes/homeWaiter/lunch/lunch.component';
+import { OrdersComponent } from './componentes/homeWaiter/orders/orders.component';
+import { HomeChefComponent } from './componentes/homeChef/home-chef/home-chef.component';
+import { OrdersPendingComponent } from './componentes/homeChef/orders-pending/orders-pending.component';
+import { OrdersDeliveringChefComponent } from './componentes/homeChef/orders-delivering-chef/orders-delivering-chef.component';
 
 const routes: Routes = [
   {path : '', component: LoginComponent},
@@ -25,7 +29,15 @@ const routes: Routes = [
    canActivate:[PermissionGuard,RoleGuard],
    children: [
     {path: 'breakfast', component: BreakfastComponent},
-    {path: 'lunch', component: LunchComponent}
+    {path: 'lunch', component: LunchComponent},
+    {path: 'orders', component: OrdersComponent}
+  ]
+  },
+  {path: 'chef', component: HomeChefComponent,
+  canActivate:[PermissionGuard,RoleGuard],
+  children: [
+    {path: 'pending', component: OrdersPendingComponent},
+    {path: 'delivering', component: OrdersDeliveringChefComponent}
   ]
   },
   {path: '**', redirectTo: '', pathMatch: 'full'}

@@ -38,4 +38,5 @@ export class ProductsService {
     const updateUrl = `${this.url}/${id}`;
     return this.http.patch<any>(updateUrl, data, this.httpOptions())
   }
+
 }

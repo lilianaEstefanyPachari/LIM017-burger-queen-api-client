@@ -1,5 +1,6 @@
 import { Direction } from '@angular/cdk/bidi';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/models/products';
 import { MainCartService } from 'src/app/services/main-cart.service';
 import { ProductsService } from 'src/app/services/products.service';
@@ -14,44 +15,42 @@ export class BreakfastComponent implements OnInit {
 
   productsBreakfast: Product[] = [];
   directionCard: Direction = "ltr";
-  // @Output() openEvent = new EventEmitter<boolean>()
 
   constructor(
     private productsService:ProductsService,
     private shoppCartService:ShoppCartService,
-    private addCartService: MainCartService
+    private addCartService: MainCartService,
+    private toastr: ToastrService,
     ) { }
 
   ngOnInit(): void {
     this.getAllProducts();
   }
 
-  getAllProducts(){
+  getAllProducts(): void{
     this.productsService.getProductsMethod()
     .subscribe({
       next: (res: Product[]) => {
-        console.log('productoooooossssssssssssss',res)
-
+        //obteniendo solo productos del tipo desayuno
         this.productsBreakfast = res.filter(e => e.type === "Desayuno");
-        this.productsBreakfast.forEach((product:any) => {
+        this.productsBreakfast.forEach((product:Product) => {
           Object.assign(product,{quantity:1,total:product.price})
         })
-        console.log('productos filtradoooooooooAAAAAs',this.productsBreakfast)
       },
       error: (err) => {
-        console.log(err, 'error mientras se hacia la consulta de data');
+        this.toastr.error('Error mientras se hacia la consulta de data', 'ERROR', {
+          timeOut: 3000,
+        });
       }
     })
   }
 
   openSideBareEvent(event: boolean): void{
-    console.log("pasando un true del hijo")
     this.shoppCartService.openSideBareService(event)
   }
 
-  addToCart(product: object){
+  addToCart(product: object): void{
     this.openSideBareEvent(true);
-    console.log("añadiendo al carrito")
     this.addCartService.addToCart(product);
   }
 

@@ -4,6 +4,17 @@ export interface Product {
   image: string;
   name: string;
   price: number;
-  type: string
+  type: string;
+}
+
+export interface ProductCart {
+  dateEntry? : string;
+  id: number;
+  image: string;
+  name: string;
+  price: number;
+  type: string;
+  quantity:number;
+  total: number
 }
 

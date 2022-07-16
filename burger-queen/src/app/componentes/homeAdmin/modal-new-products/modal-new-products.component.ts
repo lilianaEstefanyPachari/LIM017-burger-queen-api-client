@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ProductsService } from 'src/app/services/products.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
+import { Product } from 'src/app/models/products';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class ModalNewProductsComponent implements OnInit {
     private productsService: ProductsService,
     private dialogRef: MatDialogRef<ModalNewProductsComponent>,
     private toastr: ToastrService,
-    @Inject(MAT_DIALOG_DATA) public editData: any,
+    @Inject(MAT_DIALOG_DATA) public editData: Product,
   ) { }
 
   ngOnInit(): void {
@@ -29,7 +30,6 @@ export class ModalNewProductsComponent implements OnInit {
       image: ["",Validators.required],
       type: ["",Validators.required]
     });
-   // console.log(this.editData)
     if(this.editData){
       this.actionTitle = 'Formulario para actualizar productos'
       this.actionBtn = "Actualizar";
