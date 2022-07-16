@@ -1,11 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrdersService {
-  private urlOrders = 'http://localhost:8080/orders/';
+  // private urlOrders = 'http://localhost:8080/orders/';
+  private urlOrders = environment.apiURLOrders;
 
   constructor(private http: HttpClient) { }
 

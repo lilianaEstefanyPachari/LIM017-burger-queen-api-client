@@ -4,14 +4,16 @@ import { stringToKeyValue } from '@angular/flex-layout/extended/style/style-tran
 import { Observable } from 'rxjs';
 import { Users } from '../models/employees';
 import { UsersLogin } from '../models/login';
+// import { environment } from './../environments/environment';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  private url = 'http://localhost:8080/login';
-  // private url = 'https://virtserver.swaggerhub.com/ssinuco/BurgerQueenAPI/2.0.0/login'
+  // private url = 'http://localhost:8080/login';
+  private url = environment.apiURL;
 
   constructor(private http: HttpClient) { }
 

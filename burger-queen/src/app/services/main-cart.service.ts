@@ -21,8 +21,6 @@ export class MainCartService {
       this.cartItemList.push(product);
     }else{
       if (this.cartItemList.filter((e: ProductCart) => e.id === product.id).length > 0) {
-        console.log("el producto ya existe en el carrito");
-        console.log("carritooooooooooooooooooooooooooooooooooooo",product)
         return
       } else{
         this.cartItemList.push(product);
