@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serverAPI": "json-server --watch resDataEmployees.json",
-    "postinstall": "ng build --prod"
+    "postinstall": "ng build --prod",
+    "heroku-postbuild": "ng build — prod"
   },
   "private": true,
   "dependencies": {
