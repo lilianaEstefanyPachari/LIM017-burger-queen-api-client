@@ -1,0 +1,85 @@
+.cardsContainer{
+  height: 100%;
+  width: 96%;
+  margin: 5px auto;
+  background: rgba(249, 244, 244, 0.78);
+}
+
+
+.content{
+  padding: 16px;
+  height: 100%;
+}
+
+.mat-card>:first-child {
+  margin-top: 0;
+}
+.title{
+  font-size: 1.2em;
+  font-weight: 600;
+  text-align: center;
+}
+.status{
+  color: rgba(209, 140, 12, 0.979);
+  margin-bottom: 9px;
+
+}
+.date{
+  font-size: 0.9em;
+}
+.client{
+  border-top-style: dotted;
+  border-color: #433003b3;
+  padding-top: 10px;
+  font-weight: 600;
+}
+mat-card-content{
+  font-weight: 500;
+  font-size: 1.1em;
+}
+
+.productsList{
+  display: flex;
+  justify-content: space-between;
+}
+.productsList div{
+  display: flex;
+}
+.quantity{
+  margin-right: 4px;
+}
+.options{
+  border-top-style: dotted;
+  border-color: #433003b3;
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0px 0px 0px;
+}
+.btndelivered, .btnCancel{
+  width: 60%;
+  border-radius: 8px;
+}
+.btnCancel {
+  background-color: rgb(24, 22, 22);
+  color: white;
+}
+
+.btndelivered {
+  background-color: #FFCA40;
+  color: black;
+}
+
+
+
+
+@media screen and (max-width:850px){
+  .options{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .btndelivered, .btnCancel{
+    margin-bottom: 10px;
+    width: 80%;
+  }
+}

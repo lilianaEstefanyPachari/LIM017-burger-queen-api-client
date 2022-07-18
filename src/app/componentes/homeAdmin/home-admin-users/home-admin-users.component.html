@@ -1,0 +1,34 @@
+  <section class="crudUsersContainer">
+    <div class="adminAddUsers">
+      <div class="optionAddUsers" (click)="openDialog()">
+        <i class="fa-solid fa-circle-plus"></i> <p>Crear Usuario</p>
+        <span class="cdk-visually-hidden">
+          botón para abrir modal y crear usuario
+        </span>
+      </div>
+    </div>
+    <table class="table">
+      <thead class="tableHeader">
+        <tr>
+          <th scope="col">Usuario</th>
+          <th scope="col">Email</th>
+          <th scope="col">Rol</th>
+          <th scope="col">Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employ of users">
+          <th scope="row">{{employ.id}}</th>
+          <td>{{employ.email}}</td>
+          <td *ngIf="employ.roles.admin===true && employ.roles.mesero===false && employ.roles.cocina===false">{{rolAdmin}}</td>
+          <td *ngIf="employ.roles.admin===false && employ.roles.mesero===true && employ.roles.cocina===false">{{rolMesero}}</td>
+          <td *ngIf="employ.roles.admin===false && employ.roles.mesero===false && employ.roles.cocina===true">{{rolChef}}</td>
+          <td class="actionButtons">
+            <i class="iconUpdate fa-solid fa-pen" (click)="editUsers(employ)"></i>
+            <i class="iconDelete fa-solid fa-trash" (click)="deleteUsers(employ)"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+

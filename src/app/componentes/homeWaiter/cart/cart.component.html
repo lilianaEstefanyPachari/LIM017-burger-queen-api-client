@@ -1,0 +1,39 @@
+<ng-container *ngIf="products.length !=0">
+
+  <form [formGroup]="orderForm" class="formClientName">
+    <input formControlName="name" type="text" placeholder="Ingrese nombre de cliente" [(ngModel)]="clientName">
+  </form>
+  <mat-card class="listOrder" *ngFor="let product of products; let i = index">
+    <div>
+      <div (click)="removeItem(product)">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <p class="productName">{{product.name}}</p>
+      <div class="quantity">
+        <i class="fa-solid fa-circle-minus" (click)="removeQuantity(product)"></i>
+        <p>{{product.quantity}}</p>
+        <i class="fa-solid fa-circle-plus" (click)="addQuantity(product)"></i>
+      </div>
+      <p class="price">{{product.total | currency}}</p>
+    </div>
+  </mat-card>
+  <div class="granTotal">
+    <p>El total es: {{granTotal | currency}}</p>
+  </div>
+  <div class="cartOptions">
+    <button mat-stroked-button class="cleanCart" (click)="emptyCart()">Cancelar</button>
+    <button mat-stroked-button class="order" (click)="addOrder()">Enviar Pedido</button>
+  </div>
+
+</ng-container>
+
+<ng-container *ngIf="products.length ===0" >
+  <section fxFlexAlign="center" class="containerCart" [dir]="direction">
+    <div class="cartEmpty">
+      <p>Aún no se agregaron productos</p>
+      <div class="icon">
+        <mat-icon > fastfood</mat-icon>
+      </div>
+    </div>
+  </section>
+</ng-container>

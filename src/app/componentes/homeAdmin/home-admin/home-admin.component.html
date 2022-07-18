@@ -1,0 +1,36 @@
+<section class="homeContainer">
+  <section class="homeAdmin">
+  <nav>
+    <div class="profile">
+      <i class="fa-solid fa-circle-user"></i>
+      <h4>Administrador/a</h4>
+    </div>
+    <div class="logOut" routerLink="" (click)="logOut()">
+      <img src="assets\img\cerrar-sesion.png">
+    </div>
+  </nav>
+  <section class="adminContainer">
+    <div class="adminOptions">
+      <div class="optionEmployees" routerLink="users"  (click)="setStateOfViewUsers()" [className]="renderTableControler === 'userTable' ? 'optionEmployees' : 'optionEmployeesChange'">
+        <i class="fa-regular fa-user"></i><p>Empleados</p>
+        <span class="cdk-visually-hidden">
+          botón para ver tabla de usuarios
+        </span>
+      </div>
+      <div class="optionProducts" routerLink="products"  (click)="setStateOfViewProducts()" [className]="renderTableControler === 'productsTable' ? 'optionProductsChange' : 'optionProducts'">
+        <i class="fa-solid fa-cart-shopping"></i><p>Productos</p>
+        <span class="cdk-visually-hidden">
+          botón para ver tabla de productos
+        </span>
+      </div>
+    </div>
+
+  </section>
+</section>
+<section class="tables">
+  <router-outlet></router-outlet>
+</section>
+</section>
+
+
+

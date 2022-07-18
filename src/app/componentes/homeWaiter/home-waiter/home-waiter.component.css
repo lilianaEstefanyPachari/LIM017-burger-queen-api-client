@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.homeContainer {
+    height: 100vh;
+    width: 100%;
+    background-image: url("../../../../assets/img/fondoHamburguesa.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.homeWaiter {
+  height: 16%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 19px;
+  background-color: rgba(249, 244, 244, 0.78);
+  width: 96%;
+  height: 34%;
+  margin: 4px auto 0px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile h4 {
+  margin-left: 20px;
+  font-size: 1.8em;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.fa-solid {
+  font-size: 45px;
+}
+.navOptions{
+  display: flex;
+  align-items: center;
+}
+
+.logOut {
+  display: flex;
+  align-items: center;
+}
+
+.logOut img {
+  width: 45px;
+  margin-left: 17px;
+}
+
+.waiterContainer {
+  background-color: rgba(249, 244, 244, 0.78);
+  width: 96%;
+  margin: 6px auto 0;
+  height: 50%;
+}
+.fa-cart-shopping{
+  /* margin-right: 35px; */
+  color: black;
+}
+
+.waiterOptions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 96%;
+  margin: 5px auto;
+  height: 90%;
+
+}
+
+/* cambio de color de botones */
+.unselectedBreakfast p,.unselectedLunch p,.unselectedOrders p,.selectBreakfast p,.selectLunch p, .selectOrders p{
+  font-weight: 500;
+  font-size: 26px;
+  margin-left: 22px;
+  margin-top: 7px;
+}
+
+.unselectedBreakfast,.unselectedLunch,.unselectedOrders,.selectBreakfast,.selectLunch, .selectOrders{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+  height: 90%;
+}
+.unselectedBreakfast{
+  background-color: white;
+  border-radius: 7px 0 0 7px;
+}
+.unselectedLunch{
+  background-color: white;
+  border-radius: 0 0 0 0;
+}
+.unselectedOrders{
+  background-color: white;
+  border-radius: 0 7px 7px 0;
+}
+
+.selectBreakfast{
+  background-color: #FFCA40;
+  border-radius: 7px 0 0 7px;
+}
+
+.selectLunch{
+  background-color: #FFCA40;
+}
+
+.selectOrders{
+  background-color: #FFCA40;
+  border-radius: 0 7px 7px 0;
+}
+
+/* carrito */
+.cardsOrders{
+  height: 82%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sideNavContainer {
+  width: 96%;
+  height: 100%;
+  display: block;
+  background-color: rgb(249 244 244 / 85%);
+}
+mat-drawer{
+  /* width: 280px; */
+  background-color: #FFCA40;
+}
+mat-drawer-container{
+  display: block !important;
+}
+
+
+
+
+@media screen and (min-width:800px){
+
+  .fa-solid{
+    font-size: 33px;
+  }
+  .logOut img{
+    width: 34px;
+  }
+
+  .homeWaiter {
+    height: 20%;
+}
+.cardsOrders{
+  height: 79%;
+}
+}
+
+
+@media screen and (max-width:420px){
+
+  .fa-solid{
+    font-size: 25px;
+  }
+  .logOut img{
+    width: 25px;
+  }
+
+  .mat-card{
+    padding: 2px;
+  }
+  .unselectedBreakfast p,.unselectedLunch p,.unselectedOrders p,.selectBreakfast p,.selectLunch p, .selectOrders p{
+    font-size: 15px;
+    margin-left: 4px;
+  }
+  .waiterOptions i{
+    font-size: 21px;
+  }
+ .content div{
+  justify-content: center;
+ }
+}

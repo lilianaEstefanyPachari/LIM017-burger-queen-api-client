@@ -1,0 +1,50 @@
+.content{
+  padding: 16px;
+}
+
+.mat-card-image:first-child {
+  margin-top: 0px;
+
+}
+
+.mat-card>:first-child {
+  margin-top: 0;
+}
+.mat-card-image {
+  /* width: calc(100% + -10px); */
+  width: 65%;
+  margin: 0px auto 15px;
+  /* margin: 0 -16px 16px -16px; */
+}
+.mat-stroked-button {
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+.mat-button-wrapper, .mat-stroked-button {
+  font-size: 17px;
+}
+
+.productName{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 26ch;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding-left: 4px;
+}
+
+@media screen and (max-width:420px){
+
+.mat-card button{
+    padding: 2px;
+}
+.content{
+  padding: 4px;
+}
+ .content div{
+  justify-content: center;
+ }
+}

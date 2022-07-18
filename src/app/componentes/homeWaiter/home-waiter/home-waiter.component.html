@@ -1,0 +1,73 @@
+<section class="homeContainer">
+  <section class="homeWaiter">
+    <nav>
+      <div class="profile">
+        <i class="fa-solid fa-circle-user"></i>
+        <h4>Mesero</h4>
+      </div>
+      <div class="navOptions">
+        <!-- <i class="fa-solid fa-cart-shopping"  (click)="SideBareOpend = !SideBareOpend"></i> -->
+
+        <button mat-button >
+          <i class="fa-solid fa-cart-shopping" matBadge="{{totalItems}}" matBadgeColor="warn" (click)="SideBareOpend = !SideBareOpend"></i>
+          <span class="cdk-visually-hidden">
+            cart shopping icon
+          </span>
+        </button>
+
+        <div class="logOut" routerLink="" (click)="logOut()">
+          <img src="assets\img\cerrar-sesion.png">
+        </div>
+      </div>
+    </nav>
+   <section class="waiterContainer">
+      <div class="waiterOptions">
+        <div  routerLink="breakfast" (click)="setStateOfViewBreakfast()"
+          [className]="renderViewControler === 'viewBreakfast' ? 'selectBreakfast' : 'unselectedBreakfast'">
+          <i class="fa-solid fa-mug-saucer"></i>
+          <p>Desayuno</p>
+          <span class="cdk-visually-hidden">
+            botón para ver card de tipo desayuno
+          </span>
+        </div>
+        <div  routerLink="lunch" (click)="setStateOfViewLunch()"
+          [className]="renderViewControler === 'viewLunch' ? 'selectLunch' : 'unselectedLunch'">
+          <i class="fa-solid fa-burger"></i>
+          <p>Almuerzo</p>
+          <span class="cdk-visually-hidden">
+            botón para ver card de tipo almuerzo
+          </span>
+        </div>
+        <div routerLink="orders" (click)="setStateOfViewOrders()"
+        [className]="renderViewControler === 'viewOrders' ? 'selectOrders' : 'unselectedOrders'">
+        <i class="fa-solid fa-list-check"></i>
+        <p>Ordenes</p>
+        <span class="cdk-visually-hidden">
+          botón para ver card de las ordenes
+        </span>
+      </div>
+      </div>
+
+    </section>
+  </section>
+
+  <section class="cardsOrders" [dir]="originalDirection">
+
+<!-- PADRE RENDER  -->
+    <mat-drawer-container class="sideNavContainer" [dir]="direction">
+      <mat-drawer fxFlex="350px" fxFlex.xs="190px" fxFlex.sm="340px"  mode="side" [(opened)]="SideBareOpend" [dir]="originalDirection">
+        <button mat-button (click)="SideBareOpend=false">
+          <mat-icon>arrow_forward_ios</mat-icon>
+        </button>
+
+        <app-cart></app-cart>
+      </mat-drawer>
+
+      <mat-drawer-content>
+        <router-outlet></router-outlet>
+      </mat-drawer-content>
+    </mat-drawer-container>
+
+  </section>
+
+</section>
