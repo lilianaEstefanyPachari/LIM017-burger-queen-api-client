@@ -93,9 +93,11 @@ describe('LoginComponent', () => {
     email.setValue('meseroprueba.hopper@systers.xyz');
     password.setValue('1234567');
 
-    // const spyOfMethod = spyOn(component,'login');
+    // const spyOfMethod = spyOn(loginService,'postUsers');
+    // console.log("spyyyyyyyyyyyyyyyyyyyyyyyy",spyOfMethod)
     const compiled = fixture.nativeElement;
     const btnLogin = compiled.querySelector('.btn');
+    // component.login();
     btnLogin.click();
 
     // const btn = fixture.debugElement.query(By.css('.btn'));
@@ -104,8 +106,8 @@ describe('LoginComponent', () => {
     // }, 50);
     // tick(100);
 
-    expect(component.loginForm.invalid).toBeFalsy();
-    // expect(spyOfMethod).toHaveBeenCalled();
+    expect(component.loginForm.valid).toBeTruthy();
+    expect( loginService.postUsers ).toHaveBeenCalled();
   }))
 
   it('waiter should logged successfully', () => {
