@@ -41,6 +41,8 @@ import { OrdersDeliveringComponent } from './componentes/homeWaiter/orders-deliv
 import { OrdersDeliveringChefComponent } from './componentes/homeChef/orders-delivering-chef/orders-delivering-chef.component';
 import { HomeChefComponent } from './componentes/homeChef/home-chef/home-chef.component';
 import { OrdersPendingComponent } from './componentes/homeChef/orders-pending/orders-pending.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -87,7 +89,13 @@ import { OrdersPendingComponent } from './componentes/homeChef/orders-pending/or
     MatSidenavModule,
     BidiModule,
     MatBadgeModule,
-    MatListModule
+    MatListModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
