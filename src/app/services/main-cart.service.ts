@@ -27,7 +27,6 @@ export class MainCartService {
       }
     }
     this.productList.next(this.cartItemList);
-    console.log("SERVICIOOOO añadiendo productos",this.cartItemList)
   }
 
   removeCartItem(product:any){
