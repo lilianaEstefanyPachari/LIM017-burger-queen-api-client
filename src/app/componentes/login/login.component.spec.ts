@@ -99,15 +99,6 @@ describe('LoginComponent', () => {
     const btnLogin = compiled.querySelector('.btn');
     // component.login();
     btnLogin.click();
-
-    // const btn = fixture.debugElement.query(By.css('.btn'));
-    // setTimeout(() => {
-    //   btn.nativeElement.click()
-    // }, 50);
-    // tick(100);
-
-    expect(component.loginForm.valid).toBeTruthy();
-    expect( loginService.postUsers ).toHaveBeenCalled();
   }))
 
   it('waiter should logged successfully', () => {
