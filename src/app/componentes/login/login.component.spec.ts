@@ -98,12 +98,6 @@ describe('LoginComponent', () => {
     const btnLogin = compiled.querySelector('.btn');
     btnLogin.click();
 
-    // const btn = fixture.debugElement.query(By.css('.btn'));
-    // setTimeout(() => {
-    //   btn.nativeElement.click()
-    // }, 50);
-    // tick(100);
-
     expect(component.loginForm.invalid).toBeFalsy();
     // expect(spyOfMethod).toHaveBeenCalled();
   }))
