@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <label for="exampleInputPassword1" class="form-label">Contraseña</label>
       <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1">
       <div class="text-danger" *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched">
         <span>Ingresar contraseña, campo obligatorio</span>

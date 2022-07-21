@@ -151,11 +151,23 @@ para mantener actualizado el menú.
 ## 📌 3. Interfaz de usuario <a name="id3"></a>
 * Prototipado en figma.
 [Ver](https://www.figma.com/file/NeWind1X3JBaDa4sbDbh6o/Design-File-Template-(Copy)-(Copy)?node-id=0%3A1)
-#### Vista de administrador
+### Prototipo - Vista de administrador
 [![ezgif-com-gif-maker.gif](https://i.postimg.cc/m23TwwGX/ezgif-com-gif-maker.gif)](https://postimg.cc/1ftxRDXw)
-#### Vista de mesero/a
+### Prototipo - Vista de mesero/a
+* Para acceder a la página web ingrese 
+[aquí](https://burger-queen-app-lili.herokuapp.com/)
+Puede iniciar sesión con los siguientes datos:
+Email: mesero@burgerqueen.com
+contraseña: 123456
+
+
 [![ezgif-com-gif-maker.gif](https://i.postimg.cc/JhcZgyMH/ezgif-com-gif-maker.gif)](https://postimg.cc/cKCvtLKd)
-#### Vista de chef
+### Prototipo - Vista de chef
+* Para acceder a la página web ingrese 
+[aquí](https://burger-queen-app-lili.herokuapp.com/)
+Puede iniciar sesión con los siguientes datos:
+Email: chef@burgerqueen.com
+contraseña: 123456
 [![ezgif-com-gif-maker-vista-chef.gif](https://i.postimg.cc/CxHsHdJT/ezgif-com-gif-maker-vista-chef.gif)](https://postimg.cc/mPk9TL08)
 ## 📌 4. Tecnologías usadas <a name="id4"></a>
 * Angular
