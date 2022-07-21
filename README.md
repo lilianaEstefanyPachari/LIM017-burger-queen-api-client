@@ -149,25 +149,27 @@ para mantener actualizado el menú.
 * Hiciste _tests_ de usabilidad e incorporaste el _feedback_ del usuario.
 * Desplegaste tu aplicación y has etiquetado tu versión (git tag).
 ## 📌 3. Interfaz de usuario <a name="id3"></a>
+* La interfaz se ve y funciona bien en desktop y tablet (Horizontal)
 * Prototipado en figma.
 [Ver](https://www.figma.com/file/NeWind1X3JBaDa4sbDbh6o/Design-File-Template-(Copy)-(Copy)?node-id=0%3A1)
-### Prototipo - Vista de administrador
+### Vista de administrador
+##### Prototipo
 [![ezgif-com-gif-maker.gif](https://i.postimg.cc/m23TwwGX/ezgif-com-gif-maker.gif)](https://postimg.cc/1ftxRDXw)
-### Prototipo - Vista de mesero/a
+### Vista de mesero/a
 * Para acceder a la página web ingrese 
-[aquí](https://burger-queen-app-lili.herokuapp.com/)
-> Puede iniciar sesión con los siguientes datos:
-> Email: mesero@burgerqueen.com
-> contraseña: 123456
-
-
+[aquí](https://burger-queen-app-lili.herokuapp.com/)  
+Iniciar sesión con los siguientes datos:  
+Email: mesero@burgerqueen.com  
+Contraseña: 123456
+##### Prototipo
 [![ezgif-com-gif-maker.gif](https://i.postimg.cc/JhcZgyMH/ezgif-com-gif-maker.gif)](https://postimg.cc/cKCvtLKd)
-### Prototipo - Vista de chef
+### Vista de chef
 * Para acceder a la página web ingrese 
-[aquí](https://burger-queen-app-lili.herokuapp.com/)
-Puede iniciar sesión con los siguientes datos:
-Email: chef@burgerqueen.com
-contraseña: 123456
+[aquí](https://burger-queen-app-lili.herokuapp.com/)  
+Iniciar sesión con los siguientes datos:  
+Email: chef@burgerqueen.com  
+Contraseña: 123456
+##### Prototipo
 [![ezgif-com-gif-maker-vista-chef.gif](https://i.postimg.cc/CxHsHdJT/ezgif-com-gif-maker-vista-chef.gif)](https://postimg.cc/mPk9TL08)
 ## 📌 4. Tecnologías usadas <a name="id4"></a>
 * Angular
