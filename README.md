@@ -6,7 +6,7 @@
 * [4. Tecnologías usadas](#id4)
 * [5. Desarrolladoras](#id5)
 ***
-## :chincheta: 1. Resumen del proyecto <a name="id1"></a>
+## 📌 1. Resumen del proyecto <a name="id1"></a>
 Un pequeño restaurante de hamburguesas, que está creciendo, necesita un
 sistema a través del cual puedan tomar pedidos usando una _tablet_, y enviarlos
 a la cocina para que se preparen ordenada y eficientemente.
@@ -56,8 +56,8 @@ Además la clienta nos ha dado un [link a la documentación](https://laboratoria
 que especifica el comportamiento esperado de la API HTTP que deberás consumir.
 Ahí puedes encontrar todos los detalles de los _endpoints_, como por ejemplo
 qué parámetros esperan, qué deben responder, etc.
-## :chincheta: 2. Historias de usuario <a name="id2"></a>
-#### :hamburguesa: [Historia de usuario 1] Mesero/a debe poder ingresar al sistema, si el admin ya le ha asignado credenciales
+## 📌 2. Historias de usuario <a name="id2"></a>
+#### 🍔 [Historia de usuario 1] Mesero/a debe poder ingresar al sistema, si el admin ya le ha asignado credenciales
 Yo como meserx quiero poder ingresar al sistema de pedidos.
 ##### Criterios de aceptación
 Lo que debe ocurrir para que se satisfagan las necesidades del usuario.
@@ -73,7 +73,7 @@ Lo acordado que debe ocurrir para decir que la historia está terminada.
 * Hiciste _tests_ de usabilidad e incorporaste el _feedback_ del usuario.
 * Desplegaste tu aplicación y has etiquetado tu versión (git tag).
 ***
-#### :hamburguesa: [Historia de usuario 2] Mesero/a debe poder tomar pedido de cliente/a
+#### 🍔 [Historia de usuario 2] Mesero/a debe poder tomar pedido de cliente/a
 Yo como meserx quiero tomar el pedido de unx clientx para no depender de mi mala
 memoria, para saber cuánto cobrar, y enviarlo a la cocina para evitar errores y
 que se puedan ir preparando en orden.
@@ -92,7 +92,7 @@ Lo acordado que debe ocurrir para decir que la historia está terminada.
 * Hiciste _tests_ de usabilidad e incorporaste el _feedback_ del usuario.
 * Desplegaste tu aplicación y has etiquetado tu versión (git tag).
 ***
-#### :hamburguesa: [Historia de usuario 3] Jefe de cocina debe ver los pedidos
+#### 🍔 [Historia de usuario 3] Jefe de cocina debe ver los pedidos
 Yo como jefx de cocina quiero ver los pedidos de lxs clientxs en orden y
 marcar cuáles están listos para saber qué se debe cocinar y avisar a lxs meserxs
 que un pedido está listo para servirlo a un clientx.
@@ -107,7 +107,7 @@ que un pedido está listo para servirlo a un clientx.
 * Hiciste _tests_ de usabilidad e incorporaste el _feedback_ del usuario.
 * Desplegaste tu aplicación y has etiquetado tu versión (git tag).
 ***
-#### :hamburguesa: [Historia de usuario 4] Meserx debe ver pedidos listos para servir
+#### 🍔 [Historia de usuario 4] Meserx debe ver pedidos listos para servir
 Yo como meserx quiero ver los pedidos que están preparados para entregarlos
 rápidamente a lxs clientxs que las hicieron.
 ##### Criterios de aceptación
@@ -121,7 +121,7 @@ rápidamente a lxs clientxs que las hicieron.
 * Los datos se deben mantener íntegros, incluso después de que un pedido ha
   terminado. Todo esto para poder tener estadísticas en el futuro.
 ***
-#### :hamburguesa: [Historia de usuario 5] Administrador(a) de tienda debe administrar a sus trabajadorxs
+#### 🍔 [Historia de usuario 5] Administrador(a) de tienda debe administrar a sus trabajadorxs
 Yo como administrador(a) de tienda quiero gestionar a los usuarios de
 la plataforma para mantener actualizado la informacion de mis trabajadorxs.
 ##### Criterios de aceptación
@@ -135,7 +135,7 @@ la plataforma para mantener actualizado la informacion de mis trabajadorxs.
 * Hiciste _tests_ de usabilidad e incorporaste el _feedback_ del usuario.
 * Desplegaste tu aplicación y has etiquetado tu versión (git tag).
 ***
-#### :hamburguesa: [Historia de usuario 6] Administrador(a) de tienda debe administrar a sus productos
+#### 🍔 [Historia de usuario 6] Administrador(a) de tienda debe administrar a sus productos
 Yo como administrador(a) de tienda quiero gestionar los productos
 para mantener actualizado el menú.
 ##### Criterios de aceptación
@@ -148,7 +148,7 @@ para mantener actualizado el menú.
 * Haces _test_ unitarios y, además, has testeado tu producto manualmente.
 * Hiciste _tests_ de usabilidad e incorporaste el _feedback_ del usuario.
 * Desplegaste tu aplicación y has etiquetado tu versión (git tag).
-## :chincheta: 3. Interfaz de usuario <a name="id3"></a>
+## 📌 3. Interfaz de usuario <a name="id3"></a>
 * Prototipado en figma.
 [Ver](https://www.figma.com/file/NeWind1X3JBaDa4sbDbh6o/Design-File-Template-(Copy)-(Copy)?node-id=0%3A1)
 #### Vista de administrador
@@ -157,7 +157,7 @@ para mantener actualizado el menú.
 [![ezgif-com-gif-maker.gif](https://i.postimg.cc/JhcZgyMH/ezgif-com-gif-maker.gif)](https://postimg.cc/cKCvtLKd)
 #### Vista de chef
 [![ezgif-com-gif-maker-vista-chef.gif](https://i.postimg.cc/CxHsHdJT/ezgif-com-gif-maker-vista-chef.gif)](https://postimg.cc/mPk9TL08)
-## :chincheta: 4. Tecnologías usadas <a name="id4"></a>
+## 📌 4. Tecnologías usadas <a name="id4"></a>
 * Angular
 * Angular Material
 * Angular flex layout
@@ -169,6 +169,6 @@ para mantener actualizado el menú.
 * Jasmine
 * Karma
 * Git and GitHub
-## :chincheta: 5. Desarrolladoras <a name="id5"></a>
+## 📌 5. Desarrolladoras <a name="id5"></a>
 * Liliana Pachari
 * Gabriela Victorio
