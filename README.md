@@ -1,10 +1,14 @@
 # Burger Queen (API Client)
 ## Índice
-* [1. Resumen del proyecto](# 1-Resumen del proyecto)
-* [2. Historias de usuario](# 2-Historias de usuario)
+* [1. Resumen del proyecto](#id1)
+* [2. Historias de usuario](#id2)
+* [3. Interfaz de usuario](#id3)
+* [4. Tecnologías usadas](#id4)
+* [5. Desarrolladoras](#id5)
+
 
 ***
-##📌 1. Resumen del proyecto
+## 📌 1. Resumen del proyecto <a name="id1"></a>
 Un pequeño restaurante de hamburguesas, que está creciendo, necesita un
 sistema a través del cual puedan tomar pedidos usando una _tablet_, y enviarlos
 a la cocina para que se preparen ordenada y eficientemente.
@@ -55,7 +59,7 @@ que especifica el comportamiento esperado de la API HTTP que deberás consumir.
 Ahí puedes encontrar todos los detalles de los _endpoints_, como por ejemplo
 qué parámetros esperan, qué deben responder, etc.
 
-##📌 2. Historias de usuario
+## 📌 2. Historias de usuario <a name="id2"></a>
 
 #### 🍔 [Historia de usuario 1] Mesero/a debe poder ingresar al sistema, si el admin ya le ha asignado credenciales
 Yo como meserx quiero poder ingresar al sistema de pedidos.
@@ -149,7 +153,7 @@ para mantener actualizado el menú.
 * Hiciste _tests_ de usabilidad e incorporaste el _feedback_ del usuario.
 * Desplegaste tu aplicación y has etiquetado tu versión (git tag).
 
-##📌 3. Interfaz de usuario
+## 📌 3. Interfaz de usuario <a name="id3"></a>
 #### Vista de administrador
 
 [![ezgif-com-gif-maker.gif](https://i.postimg.cc/m23TwwGX/ezgif-com-gif-maker.gif)](https://postimg.cc/1ftxRDXw)
@@ -160,7 +164,7 @@ para mantener actualizado el menú.
 #### Vista de chef
 [![ezgif-com-gif-maker-vista-chef.gif](https://i.postimg.cc/CxHsHdJT/ezgif-com-gif-maker-vista-chef.gif)](https://postimg.cc/mPk9TL08)
 
-##📌 4. Tecnologías usadas
+## 📌 4. Tecnologías usadas <a name="id4"></a>
 * Angular
 * Angular Material
 * Angular flex layout
@@ -173,6 +177,6 @@ para mantener actualizado el menú.
 * Karma
 * Git and GitHub
 
-##📌 5. Desarrolladoras
+## 📌 5. Desarrolladoras <a name="id5"></a>
 * Liliana Pachari
 * Gabriela Victorio
