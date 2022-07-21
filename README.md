@@ -156,9 +156,9 @@ para mantener actualizado el menú.
 ### Prototipo - Vista de mesero/a
 * Para acceder a la página web ingrese 
 [aquí](https://burger-queen-app-lili.herokuapp.com/)
-Puede iniciar sesión con los siguientes datos:
-Email: mesero@burgerqueen.com
-contraseña: 123456
+> Puede iniciar sesión con los siguientes datos:
+> Email: mesero@burgerqueen.com
+> contraseña: 123456
 
 
 [![ezgif-com-gif-maker.gif](https://i.postimg.cc/JhcZgyMH/ezgif-com-gif-maker.gif)](https://postimg.cc/cKCvtLKd)
