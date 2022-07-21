@@ -6,7 +6,6 @@
 * [4. Tecnologías usadas](#id4)
 * [5. Desarrolladoras](#id5)
 
-
 ***
 ## 📌 1. Resumen del proyecto <a name="id1"></a>
 Un pequeño restaurante de hamburguesas, que está creciendo, necesita un

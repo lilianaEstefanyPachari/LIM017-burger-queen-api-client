@@ -28,7 +28,6 @@ export class BreakfastComponent implements OnInit {
   }
 
   getAllProducts(): void{
-    // console.log('funcion getallproductsssssss',this.productsService);
     this.productsService.getProductsMethod()
     .subscribe({
       next: (res: Product[]) => {
