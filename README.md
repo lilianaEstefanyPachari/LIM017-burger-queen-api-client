@@ -154,6 +154,10 @@ para mantener actualizado el menú.
 * Desplegaste tu aplicación y has etiquetado tu versión (git tag).
 
 ## 📌 3. Interfaz de usuario <a name="id3"></a>
+
+* Prototipado en figma.
+[Ver](https://www.figma.com/file/NeWind1X3JBaDa4sbDbh6o/Design-File-Template-(Copy)-(Copy)?node-id=0%3A1)
+
 #### Vista de administrador
 
 [![ezgif-com-gif-maker.gif](https://i.postimg.cc/m23TwwGX/ezgif-com-gif-maker.gif)](https://postimg.cc/1ftxRDXw)
